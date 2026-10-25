@@ -19,6 +19,7 @@
       </a>
       <nav class="nav" aria-label="主要導覽">
         <a href="#about">關於</a>
+        <a href="#calendar">日曆</a>
         <a href="#journal">日記</a>
         <a href="#outings">外出</a>
         <a href="#gallery">相片</a>
@@ -60,6 +61,32 @@
       </div>
     </section>
 
+
+    <!-- 日曆 -->
+    <section class="section section-alt" id="calendar" aria-labelledby="calendar-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">日曆</p>
+          <h2 id="calendar-title">哪一天有記錄</h2>
+          <p class="section-desc">有標記的日子表示那天有日記或外出；點一下就會跳到當日內容。</p>
+        </header>
+
+        <div class="calendar-panel" data-calendar>
+          <div class="calendar-toolbar">
+            <button type="button" class="calendar-nav-btn" data-cal-prev aria-label="上個月">‹</button>
+            <h3 class="calendar-month-label" data-cal-label>2026年10月</h3>
+            <button type="button" class="calendar-nav-btn" data-cal-next aria-label="下個月">›</button>
+          </div>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+          </div>
+          <div class="calendar-grid" data-cal-grid role="grid" aria-labelledby="calendar-title"></div>
+          <p class="calendar-hint" data-cal-hint>圓點表示該日有記錄</p>
+          <div class="calendar-day-list" data-cal-day-list hidden></div>
+        </div>
+      </div>
+    </section>
+
     <!-- 生活日記 -->
     <section class="section" id="journal" aria-labelledby="journal-title">
       <div class="container">
@@ -87,7 +114,7 @@
 
                 <div class="outing-grid" id="outing-list">
 
-          <article class="outing-card" data-kind="outing">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="day-2026-10-25">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -105,7 +132,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -123,7 +150,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -141,7 +168,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
             <div class="outing-visual">
               <video
                 class="outing-video"
@@ -163,7 +190,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-19" id="day-2026-10-19">
             <div class="outing-visual">
               <video
                 class="outing-video"
