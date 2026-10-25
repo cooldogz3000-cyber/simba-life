@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Simba 的生活日記 — 記錄小狗 Simba 的日常與外出時光" />
+  <title>Simba 的生活日記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true">🐾</span>
+        <span class="logo-text">Simba 日記</span>
+      </a>
+      <nav class="nav" aria-label="主要導覽">
+        <a href="#about">關於</a>
+        <a href="#journal">日記</a>
+        <a href="#outings">外出</a>
+        <a href="#gallery">相片</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero / 關於 Simba -->
+    <section class="hero" id="about" aria-labelledby="about-title">
+      <div class="container hero-stack">
+        <div class="hero-copy">
+          <p class="eyebrow">我的小狗</p>
+          <h1 id="about-title">你好，我是 <em>Simba</em></h1>
+          <p class="lead">
+            這是一本為 Simba 而寫的生活小誌：記錄日常的撒嬌與打呼、一起出門的風與陽光，
+            以及那些值得慢慢翻看的時光。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#journal">翻開日記</a>
+            <a class="btn btn-ghost" href="#add-entry">寫下一筆</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img
+            class="hero-img"
+            src="images/simba-hero.jpg"
+            alt="日落時分，和 Simba 一起坐在海邊——封面照片"
+            width="1200"
+            height="1600"
+          />
+        </div>
+        <ul class="hero-meta">
+          <li><strong>名字</strong> Simba</li>
+          <li><strong>品種</strong> 灰色玩具貴賓</li>
+          <li><strong>角色</strong> 家裡的小太陽</li>
+          <li><strong>最愛</strong> 散步、摸頭、午睡</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 生活日記 -->
+    <section class="section" id="journal" aria-labelledby="journal-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">日記</p>
+          <h2 id="journal-title">生活日記</h2>
+          <p class="section-desc">日常點滴，慢慢累積成一本只屬於 Simba 的故事書。</p>
+        </header>
+
+        <div class="timeline" id="journal-list">
+
+
+</div>
+      </div>
+    </section>
+
+    <!-- 外出記錄 -->
+    <section class="section section-alt" id="outings" aria-labelledby="outings-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">外出</p>
+          <h2 id="outings-title">外出記錄</h2>
+          <p class="section-desc">一起呼吸外面的空氣——日期、地點，與當下的一小段話。</p>
+        </header>
+
+                <div class="outing-grid" id="outing-list">
+
+          <article class="outing-card" data-kind="outing">
+            <div class="outing-visual">
+              <img
+                class="outing-img"
+                src="images/outing-2026-10-25-sashimi.jpg"
+                alt="Simba 戴藍白花紋領巾，坐在日式餐廳桌後，面前有刺身與海鮮丼"
+                width="1200"
+                height="1600"
+              />
+            </div>
+            <div class="outing-body">
+              <time datetime="2026-10-25">2026年10月25日 · 週日</time>
+              <h3>日式餐廳小聚</h3>
+              <p class="place">📍 一鮨創作壽司</p>
+              <p>Simba 戴藍白花紋領巾，坐在餐廳桌後，面前是三文魚刺身、海鮮丼與青菜配魚卵。我們小聚一頓，牠安安靜靜陪著。</p>
+            </div>
+          </article>
+
+          <article class="outing-card" data-kind="outing">
+            <div class="outing-visual">
+              <img
+                class="outing-img"
+                src="images/outing-ma-on-shan.jpg"
+                alt="外出照：媽媽與 Simba 坐在堤邊，夕陽與山影裡牠吐著舌、圍白藍領巾"
+                width="1200"
+                height="1600"
+              />
+            </div>
+            <div class="outing-body">
+              <time datetime="2026-10-25">2026年10月25日 · 週日</time>
+              <h3>馬鞍山看日落</h3>
+              <p class="place">📍 馬鞍山海旁</p>
+              <p>週日傍晚到馬鞍山海旁看日落。風有點涼，海面映著橘紅光。我們坐在石牆上，Simba 圍著白藍領巾吐舌，坐得很乖。</p>
+            </div>
+          </article>
+
+          <article class="outing-card" data-kind="outing">
+            <div class="outing-visual">
+              <img
+                class="outing-img"
+                src="images/outing-2026-10-25-promenade.jpg"
+                alt="夜間海傍步道，牽繩上的 Simba 走在燈影裡"
+                width="900"
+                height="1600"
+              />
+            </div>
+            <div class="outing-body">
+              <time datetime="2026-10-25">2026年10月25日 · 週日</time>
+              <h3>夜間海傍散步</h3>
+              <p class="place">📍 海傍步道</p>
+              <p>晚上牽著 Simba 在海傍步道走走，燈影把身影拉長，水邊夜色很靜。</p>
+            </div>
+          </article>
+
+          <article class="outing-card" data-kind="outing">
+            <div class="outing-visual">
+              <video
+                class="outing-video"
+                controls
+                playsinline
+                preload="metadata"
+                poster="images/outing-2026-10-25-poster.jpg"
+                width="720"
+                height="1280"
+              >
+                <source src="videos/outing-2026-10-25.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="outing-body">
+              <time datetime="2026-10-25">2026年10月25日 · 週日</time>
+              <h3>今日一瞬</h3>
+              <p class="place">📍 外出路上</p>
+              <p>桌邊領巾一晃，或夜色裡牽繩慢走的那幾步。</p>
+            </div>
+          </article>
+
+          <article class="outing-card" data-kind="outing">
+            <div class="outing-visual">
+              <video
+                class="outing-video"
+                controls
+                playsinline
+                preload="metadata"
+                poster="images/walk-2026-10-19-poster.jpg"
+                width="1280"
+                height="960"
+              >
+                <source src="videos/walk-2026-10-19.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="outing-body">
+              <time datetime="2026-10-19T21:37">2026年10月19日 · 週日 · 21:37</time>
+              <h3>晚上和小狗散步</h3>
+              <p class="place">📍 散步路上</p>
+              <p>21:37，和小狗一起出去走走。短短一段路，也值得留下來。</p>
+            </div>
+          </article>
+
+</div>
+      </div>
+    </section>
+
+    <!-- 相片與影片 -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="eyebrow">相簿</p>
+          <h2 id="gallery-title">相片與影片</h2>
+        </header>
+
+                <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/simba-hero.jpg" alt="封面：爸媽與 Simba 坐在石牆上，背後是橙黃日落與海水" width="2000" height="1125" />
+            <figcaption class="gallery-cap">封面 · 爸媽與 Simba，背後是橙黃日落與海水</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/outing-ma-on-shan.jpg" alt="外出照：媽媽與 Simba 坐在堤邊，夕陽與山影裡牠吐著舌、圍白藍領巾" width="1200" height="1600" />
+            <figcaption class="gallery-cap">外出照 · 媽媽與 Simba 在堤邊，吐舌、圍白藍領巾</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-video">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="images/walk-2026-10-19-poster.jpg"
+            >
+              <source src="videos/walk-2026-10-19.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="gallery-cap">2026.10.19 21:37 · 散步</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/outing-2026-10-25-sashimi.jpg" alt="Simba 戴藍白花紋領巾，坐在日式餐廳桌後，面前有刺身與海鮮丼" width="1200" height="1600" />
+            <figcaption class="gallery-cap">2026.10.25 · 日式餐廳小聚</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/outing-2026-10-25-promenade.jpg" alt="夜間海傍步道，牽繩上的 Simba 走在燈影裡" width="900" height="1600" />
+            <figcaption class="gallery-cap">2026.10.25 · 夜間海傍散步</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-video">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="images/outing-2026-10-25-poster.jpg"
+            >
+              <source src="videos/outing-2026-10-25.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="gallery-cap">2026.10.25 · 今日一瞬</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 新增一筆（localStorage） -->
+    <section class="section section-alt" id="add-entry" aria-labelledby="add-title">
+      <div class="container narrow">
+        <header class="section-header">
+          <p class="eyebrow">新增</p>
+          <h2 id="add-title">寫下一筆紀錄</h2>
+        </header>
+
+        <form class="entry-form" id="entry-form" autocomplete="off">
+          <div class="form-row tabs" role="tablist" aria-label="紀錄類型">
+            <label class="tab">
+              <input type="radio" name="kind" value="journal" checked />
+              <span>生活日記</span>
+            </label>
+            <label class="tab">
+              <input type="radio" name="kind" value="outing" />
+              <span>外出記錄</span>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label for="entry-date">日期</label>
+            <input type="date" id="entry-date" name="date" required />
+          </div>
+
+          <div class="form-row">
+            <label for="entry-title">標題</label>
+            <input type="text" id="entry-title" name="title" maxlength="80" placeholder="例如：今天的快樂散步" required />
+          </div>
+
+          <div class="form-row outing-only" hidden>
+            <label for="entry-place">地點</label>
+            <input type="text" id="entry-place" name="place" maxlength="80" placeholder="例如：維多利亞公園" />
+          </div>
+
+          <div class="form-row">
+            <label for="entry-note">內容</label>
+            <textarea id="entry-note" name="note" rows="4" maxlength="500" placeholder="寫下今天發生的小事……" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">加入紀錄</button>
+            <button type="button" class="btn btn-ghost" id="clear-saved" title="清除你自行新增的紀錄">清除我的新增</button>
+          </div>
+          <p class="form-hint" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>為 Simba 而寫 · 生活值得慢慢記錄</p>
+      <p class="footer-note">第一版靜態網站 · 相片與影片可之後陸續加入</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

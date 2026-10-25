@@ -1,0 +1,6 @@
+DEPLOY.json
+DEPLOY.md
+*.mov
+*-raw.mp4
+previews/
+.DS_Store
