@@ -39,7 +39,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#journal">翻開日記</a>
-            <a class="btn btn-ghost" href="#add-entry">寫下一筆</a>
+            <a class="btn btn-ghost" href="#outings">看看外出</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -241,54 +241,6 @@
       </div>
     </section>
 
-    <!-- 新增一筆（localStorage） -->
-    <section class="section section-alt" id="add-entry" aria-labelledby="add-title">
-      <div class="container narrow">
-        <header class="section-header">
-          <p class="eyebrow">新增</p>
-          <h2 id="add-title">寫下一筆紀錄</h2>
-        </header>
-
-        <form class="entry-form" id="entry-form" autocomplete="off">
-          <div class="form-row tabs" role="tablist" aria-label="紀錄類型">
-            <label class="tab">
-              <input type="radio" name="kind" value="journal" checked />
-              <span>生活日記</span>
-            </label>
-            <label class="tab">
-              <input type="radio" name="kind" value="outing" />
-              <span>外出記錄</span>
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label for="entry-date">日期</label>
-            <input type="date" id="entry-date" name="date" required />
-          </div>
-
-          <div class="form-row">
-            <label for="entry-title">標題</label>
-            <input type="text" id="entry-title" name="title" maxlength="80" placeholder="例如：今天的快樂散步" required />
-          </div>
-
-          <div class="form-row outing-only" hidden>
-            <label for="entry-place">地點</label>
-            <input type="text" id="entry-place" name="place" maxlength="80" placeholder="例如：維多利亞公園" />
-          </div>
-
-          <div class="form-row">
-            <label for="entry-note">內容</label>
-            <textarea id="entry-note" name="note" rows="4" maxlength="500" placeholder="寫下今天發生的小事……" required></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">加入紀錄</button>
-            <button type="button" class="btn btn-ghost" id="clear-saved" title="清除你自行新增的紀錄">清除我的新增</button>
-          </div>
-          <p class="form-hint" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
