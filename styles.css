@@ -413,22 +413,18 @@ code {
   margin-top: 1rem;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  line-height: 0;
+  background: #ebe6dc;
 }
 
-.timeline-card .entry-media img {
+.timeline-card .entry-media .journal-photo,
+.timeline-card .journal-photo {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-}
-
-.timeline-card .entry-media--landscape img {
-  aspect-ratio: 1495 / 900;
-  width: 100%;
-  height: auto;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  aspect-ratio: 3 / 2;
 }
 
 .card-badge {
