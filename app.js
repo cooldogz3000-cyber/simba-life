@@ -604,7 +604,7 @@
 
   /* —— 相簿／影片牆 —— */
   var GALLERY_PAGE_SIZE = 12;
-  var GALLERY_TAG_ORDER = ["小時候", "絕育", "日常", "午睡", "外出", "散步", "家人", "餐廳", "日落"];
+  var GALLERY_TAG_ORDER = ["小時候", "日記", "絕育", "日常", "午睡", "外出", "散步", "家人", "餐廳", "日落"];
 
   function formatGalleryDate(key) {
     var p = String(key).split("-");

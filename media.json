@@ -4,7 +4,9 @@
     "type": "image",
     "src": "images/simba-teeth-2026-10-26.jpg",
     "date": "2026-10-26",
-    "tags": ["日常"],
+    "tags": [
+      "日常"
+    ],
     "entryId": "day-2026-10-26-teeth",
     "alt": "Simba 仰望鏡頭，口微開露出下排牙，黃項圈"
   },
@@ -13,7 +15,10 @@
     "type": "image",
     "src": "images/simba-rest-2026-10-26.jpg",
     "date": "2026-10-26",
-    "tags": ["午睡", "日常"],
+    "tags": [
+      "午睡",
+      "日常"
+    ],
     "entryId": "day-2026-10-26-rest",
     "alt": "Simba 趴在淺色毛毯窩裡靠著灰色毛公仔"
   },
@@ -22,7 +27,9 @@
     "type": "image",
     "src": "images/simba-wait-2026-10-26.jpg",
     "date": "2026-10-26",
-    "tags": ["日常"],
+    "tags": [
+      "日常"
+    ],
     "entryId": "day-2026-10-26",
     "alt": "Simba 趴在深灰磁磚地板上伸腿等，紅項圈"
   },
@@ -31,7 +38,10 @@
     "type": "image",
     "src": "images/outing-2026-10-26-walk-day.jpg",
     "date": "2026-10-26",
-    "tags": ["外出", "散步"],
+    "tags": [
+      "外出",
+      "散步"
+    ],
     "entryId": "outing-2026-10-26",
     "alt": "日間行街：Simba 在石屎地與灌木旁，黃綠牽繩"
   },
@@ -40,7 +50,10 @@
     "type": "image",
     "src": "images/outing-2026-10-26-walk-night.jpg",
     "date": "2026-10-26",
-    "tags": ["外出", "散步"],
+    "tags": [
+      "外出",
+      "散步"
+    ],
     "entryId": "outing-2026-10-26",
     "alt": "夜間行街：Simba 黃項圈，人與狗影子落在行人路上"
   },
@@ -50,7 +63,10 @@
     "src": "videos/outing-2026-10-26-walk.mp4",
     "thumb": "images/outing-2026-10-26-walk-poster.jpg",
     "date": "2026-10-26",
-    "tags": ["外出", "散步"],
+    "tags": [
+      "外出",
+      "散步"
+    ],
     "entryId": "outing-2026-10-26",
     "alt": "媽咪帶辛巴行街短片"
   },
@@ -59,7 +75,10 @@
     "type": "image",
     "src": "images/outing-2026-10-25-sashimi.jpg",
     "date": "2026-10-25",
-    "tags": ["外出", "餐廳"],
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
     "entryId": "day-2026-10-25",
     "alt": "Simba 戴藍白花紋領巾，坐在日式餐廳桌後，面前有刺身與海鮮丼"
   },
@@ -68,7 +87,11 @@
     "type": "image",
     "src": "images/outing-ma-on-shan.jpg",
     "date": "2026-10-25",
-    "tags": ["外出", "家人", "日落"],
+    "tags": [
+      "外出",
+      "家人",
+      "日落"
+    ],
     "entryId": "outing-2026-10-25-sunset",
     "alt": "媽媽與 Simba 坐在堤邊，夕陽與山影裡牠吐著舌、圍白藍領巾"
   },
@@ -77,7 +100,10 @@
     "type": "image",
     "src": "images/outing-2026-10-25-promenade.jpg",
     "date": "2026-10-25",
-    "tags": ["外出", "散步"],
+    "tags": [
+      "外出",
+      "散步"
+    ],
     "entryId": "outing-2026-10-25-promenade",
     "alt": "夜間海傍步道，牽繩上的 Simba 走在燈影裡"
   },
@@ -87,7 +113,9 @@
     "src": "videos/outing-2026-10-25.mp4",
     "thumb": "images/outing-2026-10-25-poster.jpg",
     "date": "2026-10-25",
-    "tags": ["外出"],
+    "tags": [
+      "外出"
+    ],
     "entryId": "outing-2026-10-25-moment",
     "alt": "今日一瞬短片"
   },
@@ -96,7 +124,11 @@
     "type": "image",
     "src": "images/simba-hero.jpg",
     "date": "2026-10-25",
-    "tags": ["家人", "外出", "日落"],
+    "tags": [
+      "家人",
+      "外出",
+      "日落"
+    ],
     "entryId": "outing-2026-10-25-sunset",
     "alt": "爸媽與 Simba 坐在石牆上，背後是橙黃日落與海水"
   },
@@ -106,7 +138,10 @@
     "src": "videos/walk-2026-10-19.mp4",
     "thumb": "images/walk-2026-10-19-poster.jpg",
     "date": "2026-10-19",
-    "tags": ["外出", "散步"],
+    "tags": [
+      "外出",
+      "散步"
+    ],
     "entryId": "day-2026-10-19",
     "alt": "晚上和小狗散步短片"
   },
@@ -116,8 +151,11 @@
     "src": "videos/childhood-2023-08-neuter.mp4",
     "thumb": "images/childhood-2023-08-neuter-poster.jpg",
     "date": "2023-08-18",
-    "tags": ["小時候", "絕育"],
-    "entryId": "childhood-2023-08-neuter",
+    "tags": [
+      "日記",
+      "絕育"
+    ],
+    "entryId": "day-2023-08-neuter",
     "alt": "Simba 灰色貴賓坐在白色圍欄窩裡，戴透明頭罩（伊莉莎白圈），旁邊有 Duffy 枕頭同毯子"
   }
 ]
