@@ -101,7 +101,7 @@
           <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-teeth">
             <time datetime="2026-10-26">2026年10月26日 · 週一</time>
             <h3>牙小狗</h3>
-            <p>牙小狗</p>
+            
             <div class="entry-media">
               <img
                 class="journal-photo"
@@ -116,7 +116,7 @@
           <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-rest">
             <time datetime="2026-10-26">2026年10月26日 · 週一</time>
             <h3>休息小狗</h3>
-            <p>休息小狗</p>
+            
             <div class="entry-media">
               <img
                 class="journal-photo"
@@ -131,7 +131,7 @@
           <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26">
             <time datetime="2026-10-26">2026年10月26日 · 週一</time>
             <h3>Simba 等了一日</h3>
-            <p>simba 等了一日</p>
+            
             <div class="entry-media">
               <img
                 class="journal-photo"
@@ -153,7 +153,7 @@
         <header class="section-header">
           <p class="eyebrow">外出</p>
           <h2 id="outings-title">外出記錄</h2>
-          <p class="section-desc">一起呼吸外面的空氣——日期、地點，與當下的一小段話。</p>
+          <p class="section-desc">一起呼吸外面的空氣——日期，與當下的一小段話。</p>
         </header>
 
                 <div class="outing-grid" id="outing-list">
@@ -196,8 +196,6 @@
             <div class="outing-body">
               <time datetime="2026-10-26">2026年10月26日 · 週一</time>
               <h3>媽咪帶辛巴行街</h3>
-              <p class="place">📍 行街</p>
-              <p>媽咪帶辛巴行街</p>
             </div>
           </article>
 
@@ -214,12 +212,11 @@
             <div class="outing-body">
               <time datetime="2026-10-25">2026年10月25日 · 週日</time>
               <h3>日式餐廳小聚</h3>
-              <p class="place">📍 一鮨創作壽司</p>
               <p>Simba 戴藍白花紋領巾，坐在餐廳桌後，面前是三文魚刺身、海鮮丼與青菜配魚卵。我們小聚一頓，牠安安靜靜陪著。</p>
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-sunset">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -232,12 +229,11 @@
             <div class="outing-body">
               <time datetime="2026-10-25">2026年10月25日 · 週日</time>
               <h3>馬鞍山看日落</h3>
-              <p class="place">📍 馬鞍山海旁</p>
               <p>週日傍晚到馬鞍山海旁看日落。風有點涼，海面映著橘紅光。我們坐在石牆上，Simba 圍著白藍領巾吐舌，坐得很乖。</p>
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-promenade">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -250,12 +246,11 @@
             <div class="outing-body">
               <time datetime="2026-10-25">2026年10月25日 · 週日</time>
               <h3>夜間海傍散步</h3>
-              <p class="place">📍 海傍步道</p>
               <p>晚上牽著 Simba 在海傍步道走走，燈影把身影拉長，水邊夜色很靜。</p>
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25">
+          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-moment">
             <div class="outing-visual">
               <video
                 class="outing-video"
@@ -272,7 +267,6 @@
             <div class="outing-body">
               <time datetime="2026-10-25">2026年10月25日 · 週日</time>
               <h3>今日一瞬</h3>
-              <p class="place">📍 外出路上</p>
               <p>桌邊領巾一晃，或夜色裡牽繩慢走的那幾步。</p>
             </div>
           </article>
@@ -294,7 +288,6 @@
             <div class="outing-body">
               <time datetime="2026-10-19T21:37">2026年10月19日 · 週日 · 21:37</time>
               <h3>晚上和小狗散步</h3>
-              <p class="place">📍 散步路上</p>
               <p>21:37，和小狗一起出去走走。短短一段路，也值得留下來。</p>
             </div>
           </article>
@@ -394,6 +387,9 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="engagement-config.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script defer src="app.js"></script>
 </body>
 </html>

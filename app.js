@@ -323,9 +323,307 @@
     }
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initCalendar);
-  } else {
+
+  /* —— Shared likes + comments (Firebase RTDB when configured) —— */
+  var ENGAGEMENT_STORAGE_KEY = "simba-life-visitor-id";
+
+  function engagementConfig() {
+    return window.SIMBA_ENGAGEMENT || {};
+  }
+
+  function escapeHtmlAttr(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function getVisitorId() {
+    try {
+      var id = localStorage.getItem(ENGAGEMENT_STORAGE_KEY);
+      if (id && /^v_[a-z0-9]+$/i.test(id)) return id;
+      id =
+        "v_" +
+        Math.random().toString(36).slice(2, 10) +
+        Date.now().toString(36).slice(-4);
+      localStorage.setItem(ENGAGEMENT_STORAGE_KEY, id);
+      return id;
+    } catch (e) {
+      return "v_anon";
+    }
+  }
+
+  function ensurePostId(card, index) {
+    var id = card.id || card.getAttribute("data-post-id");
+    if (id) {
+      card.setAttribute("data-post-id", id);
+      return id;
+    }
+    var date = card.getAttribute("data-date") || "unknown";
+    var kind = card.getAttribute("data-kind") || "post";
+    id = kind + "-" + date + "-" + index;
+    card.id = id;
+    card.setAttribute("data-post-id", id);
+    return id;
+  }
+
+  function buildEngagementShell(postId) {
+    var wrap = document.createElement("div");
+    wrap.className = "engagement";
+    wrap.setAttribute("data-engagement-for", postId);
+    wrap.innerHTML =
+      '<div class="engagement-bar">' +
+      '<button type="button" class="like-btn" aria-pressed="false" aria-label="讚好">' +
+      '<span class="like-heart" aria-hidden="true">♡</span>' +
+      '<span class="like-count">0</span>' +
+      "</button>" +
+      '<span class="engagement-meta">留言</span>' +
+      "</div>" +
+      '<ul class="comment-list" aria-label="留言列表"></ul>' +
+      '<form class="comment-form">' +
+      '<input type="text" class="comment-input" maxlength="200" placeholder="寫留言…" autocomplete="off" enterkeyhint="send" />' +
+      '<button type="submit" class="comment-send">送出</button>' +
+      "</form>" +
+      '<p class="engagement-status" hidden></p>';
+    return wrap;
+  }
+
+  function formatCommentTime(ts) {
+    if (!ts) return "";
+    try {
+      var d = new Date(ts);
+      if (isNaN(d.getTime())) return "";
+      return d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function mountEngagement(card, shell) {
+    var outingBody = card.querySelector(".outing-body");
+    if (outingBody) {
+      outingBody.appendChild(shell);
+      return;
+    }
+    var media = card.querySelector(".entry-media");
+    if (media) {
+      media.insertAdjacentElement("afterend", shell);
+      return;
+    }
+    card.appendChild(shell);
+  }
+
+  function initEngagement() {
+    var cards = document.querySelectorAll(".timeline-card, .outing-card");
+    if (!cards.length) return;
+
+    var cfg = engagementConfig();
+    var maxLen = cfg.maxCommentLength || 200;
+    var rootPath = cfg.rootPath || "simba-life/posts";
+    var visitorId = getVisitorId();
+    var db = null;
+    var live = false;
+
+    if (
+      cfg.enabled &&
+      cfg.firebase &&
+      cfg.firebase.apiKey &&
+      cfg.firebase.databaseURL &&
+      window.firebase
+    ) {
+      try {
+        if (!firebase.apps.length) {
+          firebase.initializeApp(cfg.firebase);
+        }
+        db = firebase.database();
+        live = true;
+      } catch (err) {
+        console.warn("Simba engagement: Firebase init failed", err);
+        live = false;
+      }
+    }
+
+    cards.forEach(function (card, index) {
+      var postId = ensurePostId(card, index);
+      if (card.querySelector("[data-engagement-for]")) return;
+
+      var shell = buildEngagementShell(postId);
+      mountEngagement(card, shell);
+
+      var likeBtn = shell.querySelector(".like-btn");
+      var likeCountEl = shell.querySelector(".like-count");
+      var heartEl = shell.querySelector(".like-heart");
+      var listEl = shell.querySelector(".comment-list");
+      var form = shell.querySelector(".comment-form");
+      var input = shell.querySelector(".comment-input");
+      var sendBtn = shell.querySelector(".comment-send");
+      var statusEl = shell.querySelector(".engagement-status");
+      var liked = false;
+      var likeCount = 0;
+
+      function setStatus(msg, isError) {
+        if (!statusEl) return;
+        if (!msg) {
+          statusEl.hidden = true;
+          statusEl.textContent = "";
+          statusEl.classList.remove("is-error");
+          return;
+        }
+        statusEl.hidden = false;
+        statusEl.textContent = msg;
+        statusEl.classList.toggle("is-error", !!isError);
+      }
+
+      function renderLike() {
+        likeCountEl.textContent = String(likeCount);
+        likeBtn.setAttribute("aria-pressed", liked ? "true" : "false");
+        likeBtn.classList.toggle("is-liked", liked);
+        heartEl.textContent = liked ? "♥" : "♡";
+      }
+
+      function renderComments(comments) {
+        listEl.innerHTML = "";
+        if (!comments || !comments.length) return;
+        comments.forEach(function (c) {
+          var li = document.createElement("li");
+          li.className = "comment-item";
+          li.innerHTML =
+            '<span class="comment-text">' +
+            escapeHtmlAttr(c.text) +
+            "</span>" +
+            (c.createdAt
+              ? '<time class="comment-time">' +
+                escapeHtmlAttr(formatCommentTime(c.createdAt)) +
+                "</time>"
+              : "");
+          listEl.appendChild(li);
+        });
+      }
+
+      if (!live) {
+        likeBtn.disabled = true;
+        input.disabled = true;
+        input.placeholder = "留言即將開放";
+        sendBtn.disabled = true;
+        renderLike();
+        return;
+      }
+
+      var postRef = db.ref(rootPath + "/" + postId);
+      var likesRef = postRef.child("likes");
+      var likeCountRef = postRef.child("likeCount");
+      var commentsRef = postRef.child("comments");
+
+      likeCountRef.on("value", function (snap) {
+        var v = snap.val();
+        likeCount = typeof v === "number" ? v : 0;
+        renderLike();
+      });
+
+      likesRef.child(visitorId).on("value", function (snap) {
+        liked = snap.val() === true;
+        renderLike();
+      });
+
+      commentsRef.limitToLast(50).on("value", function (snap) {
+        var raw = snap.val() || {};
+        var arr = Object.keys(raw).map(function (k) {
+          return {
+            id: k,
+            text: (raw[k] && raw[k].text) || "",
+            createdAt: (raw[k] && raw[k].createdAt) || 0
+          };
+        });
+        arr.sort(function (a, b) {
+          return a.createdAt - b.createdAt;
+        });
+        renderComments(arr);
+      });
+
+      likeBtn.addEventListener("click", function () {
+        likeBtn.disabled = true;
+        var myLike = likesRef.child(visitorId);
+        myLike
+          .once("value")
+          .then(function (snap) {
+            var currently = snap.val() === true;
+            if (currently) {
+              return myLike.remove().then(function () {
+                return likeCountRef.transaction(function (cur) {
+                  cur = typeof cur === "number" ? cur : 0;
+                  return cur > 0 ? cur - 1 : 0;
+                });
+              });
+            }
+            return myLike.set(true).then(function () {
+              return likeCountRef.transaction(function (cur) {
+                cur = typeof cur === "number" ? cur : 0;
+                return cur + 1;
+              });
+            });
+          })
+          .catch(function (err) {
+            console.warn(err);
+            setStatus("暫時無法讚好，請稍後再試", true);
+          })
+          .then(function () {
+            likeBtn.disabled = false;
+          });
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var text = (input.value || "").trim();
+        if (!text) return;
+        if (text.length > maxLen) {
+          setStatus("留言請在 " + maxLen + " 字以內", true);
+          return;
+        }
+        sendBtn.disabled = true;
+        commentsRef
+          .push({
+            text: text.slice(0, maxLen),
+            createdAt: Date.now()
+          })
+          .then(function () {
+            input.value = "";
+            setStatus("");
+          })
+          .catch(function (err) {
+            console.warn(err);
+            setStatus("留言送出失敗，請稍後再試", true);
+          })
+          .then(function () {
+            sendBtn.disabled = false;
+          });
+      });
+    });
+  }
+
+  function boot() {
     initCalendar();
+    function startEngagement() {
+      initEngagement();
+    }
+    // firebase-*-compat.js are defer; wait until available or give up briefly
+    if (window.firebase || !engagementConfig().enabled) {
+      startEngagement();
+      return;
+    }
+    var tries = 0;
+    var timer = window.setInterval(function () {
+      tries += 1;
+      if (window.firebase || tries > 40) {
+        window.clearInterval(timer);
+        startEngagement();
+      }
+    }, 50);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
   }
 })();
