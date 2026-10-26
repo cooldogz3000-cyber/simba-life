@@ -601,8 +601,352 @@
     });
   }
 
+
+  /* —— 相簿／影片牆 —— */
+  var GALLERY_PAGE_SIZE = 12;
+  var GALLERY_TAG_ORDER = ["日常", "午睡", "外出", "散步", "家人", "餐廳", "日落"];
+
+  function formatGalleryDate(key) {
+    var p = String(key).split("-");
+    if (p.length < 3) return key;
+    return Number(p[0]) + "年" + Number(p[1]) + "月" + Number(p[2]) + "日";
+  }
+
+  function monthKeyFromDate(dateStr) {
+    return String(dateStr).slice(0, 7);
+  }
+
+  function formatMonthChip(ym) {
+    var p = ym.split("-");
+    return p[0] + "-" + p[1];
+  }
+
+  function playIconSvg() {
+    return (
+      '<svg viewBox="0 0 12 12" aria-hidden="true"><path fill="currentColor" d="M3 1.5v9l8-4.5z"/></svg>'
+    );
+  }
+
+  function initGallery() {
+    var section = document.getElementById("gallery");
+    if (!section) return;
+
+    var grid = section.querySelector("[data-gallery-grid]");
+    var emptyEl = section.querySelector("[data-gallery-empty]");
+    var moreWrap = section.querySelector("[data-gallery-more-wrap]");
+    var moreBtn = section.querySelector("[data-gallery-more]");
+    var datesRow = section.querySelector("[data-gallery-dates]");
+    var tagsRow = section.querySelector("[data-gallery-tags]");
+    var lightbox = document.querySelector("[data-lightbox]");
+    if (!grid || !datesRow || !tagsRow || !lightbox) return;
+
+    var state = {
+      items: [],
+      dateFilter: "all",
+      tagFilter: null,
+      shown: GALLERY_PAGE_SIZE
+    };
+
+    var lbMedia = lightbox.querySelector("[data-lightbox-media]");
+    var lbDate = lightbox.querySelector("[data-lightbox-date]");
+    var lbTags = lightbox.querySelector("[data-lightbox-tags]");
+    var lbEntry = lightbox.querySelector("[data-lightbox-entry]");
+
+    function todayParts() {
+      var n = new Date();
+      return { y: n.getFullYear(), m: n.getMonth() + 1, key: toDayKey(n) };
+    }
+
+    function matchesFilters(item) {
+      var d = item.date;
+      var df = state.dateFilter;
+      if (df && df !== "all") {
+        if (df === "month") {
+          var t = todayParts();
+          if (monthKeyFromDate(d) !== t.y + "-" + pad2(t.m)) return false;
+        } else if (df === "year") {
+          if (String(d).slice(0, 4) !== String(todayParts().y)) return false;
+        } else if (df.indexOf("-") === 4 && df.length === 7) {
+          if (monthKeyFromDate(d) !== df) return false;
+        } else if (/^\d{4}-\d{2}-\d{2}$/.test(df)) {
+          if (d !== df) return false;
+        }
+      }
+      if (state.tagFilter) {
+        var tags = item.tags || [];
+        if (tags.indexOf(state.tagFilter) < 0) return false;
+      }
+      return true;
+    }
+
+    function filtered() {
+      return state.items.filter(matchesFilters);
+    }
+
+    function makeChip(label, value, group) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "gallery-chip";
+      btn.textContent = label;
+      btn.setAttribute("data-filter-group", group);
+      btn.setAttribute("data-filter-value", value);
+      return btn;
+    }
+
+    function buildFilterChips() {
+      datesRow.innerHTML = "";
+      tagsRow.innerHTML = "";
+
+      datesRow.appendChild(makeChip("全部", "all", "date"));
+      datesRow.appendChild(makeChip("本月", "month", "date"));
+      datesRow.appendChild(makeChip("今年", "year", "date"));
+
+      var months = {};
+      state.items.forEach(function (it) {
+        months[monthKeyFromDate(it.date)] = true;
+      });
+      Object.keys(months)
+        .sort()
+        .reverse()
+        .forEach(function (ym) {
+          datesRow.appendChild(makeChip(formatMonthChip(ym), ym, "date"));
+        });
+
+      tagsRow.appendChild(makeChip("全部標籤", "", "tag"));
+      var present = {};
+      state.items.forEach(function (it) {
+        (it.tags || []).forEach(function (t) {
+          present[t] = true;
+        });
+      });
+      GALLERY_TAG_ORDER.forEach(function (t) {
+        if (present[t]) tagsRow.appendChild(makeChip(t, t, "tag"));
+      });
+
+      syncChipActive();
+    }
+
+    function syncChipActive() {
+      datesRow.querySelectorAll(".gallery-chip").forEach(function (btn) {
+        var v = btn.getAttribute("data-filter-value");
+        btn.classList.toggle("is-active", v === state.dateFilter);
+      });
+      tagsRow.querySelectorAll(".gallery-chip").forEach(function (btn) {
+        var v = btn.getAttribute("data-filter-value") || "";
+        var active = state.tagFilter ? v === state.tagFilter : v === "";
+        btn.classList.toggle("is-active", active);
+      });
+    }
+
+    function openLightbox(item) {
+      lbMedia.innerHTML = "";
+      if (item.type === "video") {
+        var video = document.createElement("video");
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        if (item.thumb) video.poster = item.thumb;
+        var source = document.createElement("source");
+        source.src = item.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        lbMedia.appendChild(video);
+        try {
+          video.play();
+        } catch (e) {}
+      } else {
+        var img = document.createElement("img");
+        img.src = item.src;
+        img.alt = item.alt || "";
+        lbMedia.appendChild(img);
+      }
+      lbDate.textContent = formatGalleryDate(item.date);
+      lbTags.textContent = (item.tags || []).join(" · ");
+      if (item.entryId && document.getElementById(item.entryId)) {
+        lbEntry.hidden = false;
+        lbEntry.href = "#" + item.entryId;
+        lbEntry.onclick = function (e) {
+          e.preventDefault();
+          closeLightbox();
+          jumpToEntry(item.entryId);
+        };
+      } else {
+        lbEntry.hidden = true;
+        lbEntry.onclick = null;
+      }
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      var v = lbMedia.querySelector("video");
+      if (v) {
+        try {
+          v.pause();
+        } catch (e) {}
+      }
+      lbMedia.innerHTML = "";
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    function jumpToEntry(entryId) {
+      var el = document.getElementById(entryId);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.remove("entry-flash");
+      void el.offsetWidth;
+      el.classList.add("entry-flash");
+      window.setTimeout(function () {
+        el.classList.remove("entry-flash");
+      }, 1500);
+    }
+
+    function renderGrid() {
+      var list = filtered();
+      grid.innerHTML = "";
+      if (!list.length) {
+        emptyEl.hidden = false;
+        moreWrap.hidden = true;
+        return;
+      }
+      emptyEl.hidden = true;
+      var slice = list.slice(0, state.shown);
+      slice.forEach(function (item) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "gallery-item";
+        btn.setAttribute("data-media-id", item.id);
+        btn.setAttribute(
+          "aria-label",
+          (item.type === "video" ? "影片：" : "相片：") + (item.alt || item.id)
+        );
+        var img = document.createElement("img");
+        img.className = "gallery-thumb";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.alt = "";
+        img.src = item.type === "video" ? item.thumb || item.src : item.src;
+        btn.appendChild(img);
+        if (item.type === "video") {
+          var badge = document.createElement("span");
+          badge.className = "gallery-play";
+          badge.innerHTML = playIconSvg();
+          btn.appendChild(badge);
+        }
+        btn.addEventListener("click", function () {
+          openLightbox(item);
+        });
+        grid.appendChild(btn);
+      });
+      moreWrap.hidden = list.length <= state.shown;
+    }
+
+    function onFilterClick(e) {
+      var btn = e.target.closest(".gallery-chip");
+      if (!btn) return;
+      var group = btn.getAttribute("data-filter-group");
+      var value = btn.getAttribute("data-filter-value") || "";
+      if (group === "date") {
+        state.dateFilter = value || "all";
+      } else if (group === "tag") {
+        state.tagFilter = value || null;
+      }
+      state.shown = GALLERY_PAGE_SIZE;
+      syncChipActive();
+      renderGrid();
+    }
+
+    datesRow.addEventListener("click", onFilterClick);
+    tagsRow.addEventListener("click", onFilterClick);
+    moreBtn.addEventListener("click", function () {
+      state.shown += GALLERY_PAGE_SIZE;
+      renderGrid();
+    });
+    lightbox.querySelectorAll("[data-lightbox-close]").forEach(function (el) {
+      el.addEventListener("click", closeLightbox);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+
+    // Bidirectional: diary / outing thumbs open lightbox or jump with day filter
+    function findBySrc(src) {
+      if (!src) return null;
+      var clean = src.split("#")[0].split("?")[0];
+      var path = clean.replace(/^\.\//, "");
+      for (var i = 0; i < state.items.length; i++) {
+        var it = state.items[i];
+        if (it.src === path || (it.thumb && it.thumb === path)) return it;
+        if (path.endsWith(it.src) || (it.thumb && path.endsWith(it.thumb))) return it;
+      }
+      return null;
+    }
+
+    document.addEventListener("click", function (e) {
+      var media = e.target.closest(
+        ".journal-photo, .outing-img, .outing-video, .timeline-card video, .outing-card video"
+      );
+      if (!media) return;
+      if (media.closest("[data-gallery-grid], [data-lightbox]")) return;
+      var src =
+        media.currentSrc ||
+        media.getAttribute("src") ||
+        (media.querySelector &&
+          media.querySelector("source") &&
+          media.querySelector("source").getAttribute("src"));
+      var item = findBySrc(src);
+      if (!item && media.tagName === "VIDEO") {
+        var poster = media.getAttribute("poster");
+        item = findBySrc(poster);
+      }
+      if (!item) return;
+      e.preventDefault();
+      openLightbox(item);
+    });
+
+    // Deep link: #gallery?date=YYYY-MM-DD or hash day filter via query on hash
+    function applyHashFilter() {
+      var hash = location.hash || "";
+      var m = hash.match(/^#gallery(?:\?(.*))?$/);
+      if (!m) return;
+      var params = new URLSearchParams(m[1] || "");
+      var day = params.get("date");
+      var tag = params.get("tag");
+      if (day) state.dateFilter = day;
+      if (tag) state.tagFilter = tag;
+      syncChipActive();
+      renderGrid();
+    }
+
+    window.addEventListener("hashchange", applyHashFilter);
+
+    fetch("media.json", { cache: "no-cache" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("media.json " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        state.items = Array.isArray(data) ? data.slice() : [];
+        state.items.sort(function (a, b) {
+          if (a.date === b.date) return (a.id < b.id ? 1 : -1);
+          return a.date < b.date ? 1 : -1;
+        });
+        buildFilterChips();
+        applyHashFilter();
+        renderGrid();
+      })
+      .catch(function (err) {
+        console.warn(err);
+        emptyEl.hidden = false;
+        emptyEl.textContent = "這段日子還沒有照片";
+        moreWrap.hidden = true;
+      });
+  }
+
   function boot() {
     initCalendar();
+    initGallery();
     function startEngagement() {
       initEngagement();
     }
