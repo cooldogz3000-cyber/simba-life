@@ -475,6 +475,40 @@ code {
   border-bottom: 1px solid var(--warm-line);
 }
 
+.outing-media-stack {
+  display: grid;
+  gap: 0;
+}
+
+.outing-media-stack .outing-visual:last-child {
+  border-bottom: 1px solid var(--warm-line);
+}
+
+.outing-card--album {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 760px) {
+  .outing-media-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .outing-media-stack .outing-visual {
+    border-bottom: none;
+    border-right: 1px solid var(--warm-line);
+  }
+
+  .outing-media-stack .outing-visual:last-child {
+    border-right: none;
+  }
+
+  .outing-media-stack .outing-img,
+  .outing-media-stack .outing-video {
+    aspect-ratio: 3 / 4;
+    max-height: 480px;
+  }
+}
+
 .outing-video {
   display: block;
   width: 100%;
