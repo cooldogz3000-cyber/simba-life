@@ -413,13 +413,22 @@ code {
   margin-top: 1rem;
   border-radius: var(--radius-sm);
   overflow: hidden;
+  line-height: 0;
 }
 
 .timeline-card .entry-media img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
-  vertical-align: middle;
+  object-fit: contain;
+  object-position: center;
+}
+
+.timeline-card .entry-media--landscape img {
+  aspect-ratio: 1495 / 900;
+  width: 100%;
+  height: auto;
 }
 
 .card-badge {
@@ -579,11 +588,16 @@ code {
   min-width: 0;
 }
 
+.gallery-item {
+  aspect-ratio: 4 / 3;
+}
+
 .gallery-item img,
 .gallery-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery-ph {
