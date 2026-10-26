@@ -409,6 +409,19 @@ code {
   line-height: 1.55;
 }
 
+.timeline-card .entry-media {
+  margin-top: 1rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.timeline-card .entry-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
 .card-badge {
   position: absolute;
   top: 1.15rem;
