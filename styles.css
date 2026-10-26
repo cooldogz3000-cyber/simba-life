@@ -424,7 +424,6 @@ code {
   height: auto !important;
   max-height: none !important;
   object-fit: contain !important;
-  aspect-ratio: 3 / 2;
 }
 
 .card-badge {
