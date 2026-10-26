@@ -426,6 +426,19 @@ code {
   object-fit: contain !important;
 }
 
+.timeline-card .entry-media .childhood-video,
+.timeline-card .childhood-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto;
+  object-fit: contain !important;
+  background: #1d1d1f;
+}
+
+
 .card-badge {
   position: absolute;
   top: 1.15rem;
@@ -1146,7 +1159,9 @@ code {
 /* Jump target highlight + sticky-header offset */
 .outing-card[id^="day-"],
 .timeline-card[id^="day-"],
-[id^="day-"] {
+.timeline-card[id^="childhood-"],
+[id^="day-"],
+[id^="childhood-"] {
   scroll-margin-top: 4.5rem;
 }
 

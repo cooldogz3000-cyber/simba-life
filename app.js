@@ -108,7 +108,7 @@
       var first = map[day][0].el;
       var anchorId = "day-" + day;
       var existing = document.getElementById(anchorId);
-      if (!existing) {
+      if (!existing && !first.id) {
         first.id = anchorId;
       }
     });
@@ -604,7 +604,7 @@
 
   /* —— 相簿／影片牆 —— */
   var GALLERY_PAGE_SIZE = 12;
-  var GALLERY_TAG_ORDER = ["日常", "午睡", "外出", "散步", "家人", "餐廳", "日落"];
+  var GALLERY_TAG_ORDER = ["小時候", "絕育", "日常", "午睡", "外出", "散步", "家人", "餐廳", "日落"];
 
   function formatGalleryDate(key) {
     var p = String(key).split("-");
@@ -885,7 +885,7 @@
 
     document.addEventListener("click", function (e) {
       var media = e.target.closest(
-        ".journal-photo, .outing-img, .outing-video, .timeline-card video, .outing-card video"
+        ".journal-photo, .outing-img, .outing-video, .childhood-video, .timeline-card video, .outing-card video"
       );
       if (!media) return;
       if (media.closest("[data-gallery-grid], [data-lightbox]")) return;
