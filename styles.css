@@ -514,19 +514,26 @@ code {
     border-right: none;
   }
 
-  .outing-media-stack .outing-img,
-  .outing-media-stack .outing-video {
+  .outing-media-stack .outing-img {
     aspect-ratio: 3 / 4;
     max-height: 480px;
+  }
+
+  .outing-media-stack .outing-video {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
   }
 }
 
 .outing-video {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
   max-height: 520px;
-  object-fit: cover;
+  aspect-ratio: auto;
+  object-fit: contain;
   background: #1d1d1f;
 }
 
