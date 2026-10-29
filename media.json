@@ -1,5 +1,29 @@
 [
   {
+    "id": "outing-2026-10-29-sim-pig-1",
+    "type": "image",
+    "src": "images/outing-2026-10-29-sim-pig.jpg",
+    "date": "2026-10-29",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-10-29-sim-pig",
+    "alt": "grey toy poodle sitting on brick sidewalk at night, lime leash"
+  },
+  {
+    "id": "outing-2026-10-29-sim-pig-2",
+    "type": "image",
+    "src": "images/outing-2026-10-29-sim-pig-2.jpg",
+    "date": "2026-10-29",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-10-29-sim-pig",
+    "alt": "overhead night view: grey toy poodle looking up from brick sidewalk, lime-striped leash"
+  },
+  {
     "id": "outing-2026-10-28-ring-1",
     "type": "image",
     "src": "images/outing-2026-10-28-ring-1.jpg",
