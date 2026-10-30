@@ -23,6 +23,7 @@
         <a href="#calendar">日曆</a>
         <a href="#journal">日記</a>
         <a href="#outings">外出</a>
+        <a href="#on-this-day">同日</a>
         <a href="#gallery">相簿</a>
       </nav>
     </div>
@@ -553,6 +554,34 @@
           </article>
 
 </div>
+      </div>
+    </section>
+
+
+    <!-- 跨年同日相簿日曆 -->
+    <section class="section section-alt" id="on-this-day" aria-labelledby="otd-title">
+      <div class="container otd-wrap">
+        <header class="section-header">
+          <p class="eyebrow">同日</p>
+          <h2 id="otd-title">每年的這一天</h2>
+          <p class="section-desc">同一天的照片，按年份排成一列，方便對照。</p>
+        </header>
+
+        <div class="otd-panel" data-otd>
+          <div class="otd-toolbar">
+            <button type="button" class="otd-nav-btn" data-otd-prev aria-label="前一天">‹</button>
+            <div class="otd-heading">
+              <h3 class="otd-date-label" data-otd-label>10月30日（週四）</h3>
+              <button type="button" class="otd-today-btn" data-otd-today>今天</button>
+            </div>
+            <button type="button" class="otd-nav-btn" data-otd-next aria-label="後一天">›</button>
+          </div>
+
+          <div class="otd-scroll">
+            <div class="otd-matrix" data-otd-matrix role="grid" aria-labelledby="otd-title"></div>
+          </div>
+          <p class="otd-hint" data-otd-hint>點格子開啟相片；右下角數字是當天張數。</p>
+        </div>
       </div>
     </section>
 

@@ -921,6 +921,14 @@
 
     window.addEventListener("hashchange", applyHashFilter);
 
+    window.SimbaMedia = {
+      open: openLightbox,
+      close: closeLightbox,
+      getItems: function () {
+        return state.items;
+      }
+    };
+
     fetch("media.json", { cache: "no-cache" })
       .then(function (res) {
         if (!res.ok) throw new Error("media.json " + res.status);
@@ -935,6 +943,9 @@
         buildFilterChips();
         applyHashFilter();
         renderGrid();
+        try {
+          document.dispatchEvent(new CustomEvent("simba:media-ready"));
+        } catch (e) {}
       })
       .catch(function (err) {
         console.warn(err);
@@ -944,9 +955,261 @@
       });
   }
 
+
+  function initOnThisDay() {
+    var root = document.querySelector("[data-otd]");
+    if (!root) return;
+
+    var matrix = root.querySelector("[data-otd-matrix]");
+    var label = root.querySelector("[data-otd-label]");
+    var hint = root.querySelector("[data-otd-hint]");
+    var prevBtn = root.querySelector("[data-otd-prev]");
+    var nextBtn = root.querySelector("[data-otd-next]");
+    var todayBtn = root.querySelector("[data-otd-today]");
+    if (!matrix || !label) return;
+
+    var WEEKDAYS_MON = ["一", "二", "三", "四", "五", "六", "日"];
+    var state = {
+      items: [],
+      byDate: {},
+      years: [],
+      focus: startOfLocalDay(new Date())
+    };
+
+    function startOfLocalDay(d) {
+      return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    }
+
+    function addDays(d, n) {
+      return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+    }
+
+    function mondayOf(d) {
+      var day = d.getDay(); // 0 Sun
+      var diff = day === 0 ? -6 : 1 - day;
+      return addDays(d, diff);
+    }
+
+    function formatOtdLabel(d) {
+      return (
+        d.getMonth() +
+        1 +
+        "月" +
+        d.getDate() +
+        "日（週" +
+        WEEKDAYS_ZH[d.getDay()] +
+        "）"
+      );
+    }
+
+    function mdParts(d) {
+      return { m: d.getMonth() + 1, day: d.getDate() };
+    }
+
+    function keyForYearMD(year, m, day) {
+      // clamp invalid dates (e.g. Feb 30) by checking rollover
+      var dt = new Date(year, m - 1, day);
+      if (dt.getFullYear() !== year || dt.getMonth() !== m - 1 || dt.getDate() !== day) {
+        return null;
+      }
+      return year + "-" + pad2(m) + "-" + pad2(day);
+    }
+
+    function indexItems(list) {
+      state.items = list.slice();
+      state.byDate = {};
+      var yearSet = {};
+      state.items.forEach(function (it) {
+        if (!it.date) return;
+        if (!state.byDate[it.date]) state.byDate[it.date] = [];
+        state.byDate[it.date].push(it);
+        yearSet[String(it.date).slice(0, 4)] = true;
+      });
+      Object.keys(state.byDate).forEach(function (k) {
+        state.byDate[k].sort(function (a, b) {
+          return a.id < b.id ? 1 : -1;
+        });
+      });
+      state.years = Object.keys(yearSet)
+        .map(Number)
+        .sort(function (a, b) {
+          return b - a;
+        });
+      // Always include current year for empty rows context
+      var cy = new Date().getFullYear();
+      if (state.years.indexOf(cy) < 0) state.years.unshift(cy);
+    }
+
+    function openItem(item) {
+      if (window.SimbaMedia && typeof window.SimbaMedia.open === "function") {
+        window.SimbaMedia.open(item);
+        return;
+      }
+      // Fallback: jump to gallery filtered by day
+      location.hash = "#gallery?date=" + encodeURIComponent(item.date);
+    }
+
+    function render() {
+      var focus = state.focus;
+      var todayKey = toDayKey(new Date());
+      label.textContent = formatOtdLabel(focus);
+
+      var mon = mondayOf(focus);
+      var cols = [];
+      for (var i = 0; i < 7; i++) cols.push(addDays(mon, i));
+      var focusCol = -1;
+      for (var c = 0; c < 7; c++) {
+        if (toDayKey(cols[c]) === toDayKey(focus)) focusCol = c;
+      }
+
+      matrix.innerHTML = "";
+
+      var corner = document.createElement("div");
+      corner.className = "otd-corner";
+      corner.setAttribute("aria-hidden", "true");
+      matrix.appendChild(corner);
+
+      cols.forEach(function (d, idx) {
+        var head = document.createElement("div");
+        head.className = "otd-weekday";
+        var wd = d.getDay();
+        if (wd === 6) head.classList.add("is-sat");
+        if (wd === 0) head.classList.add("is-sun");
+        head.textContent = "週" + WEEKDAYS_MON[idx];
+        matrix.appendChild(head);
+      });
+
+      if (!state.years.length) {
+        if (hint) hint.textContent = "還沒有可對照的相片，先在相簿加入媒體。";
+        return;
+      }
+      if (hint) {
+        hint.textContent = "點格子開啟相片；右下角數字是當天張數。";
+      }
+
+      state.years.forEach(function (year) {
+        var yEl = document.createElement("div");
+        yEl.className = "otd-year";
+        yEl.textContent = String(year);
+        matrix.appendChild(yEl);
+
+        cols.forEach(function (templateDay, colIdx) {
+          var md = mdParts(templateDay);
+          var key = keyForYearMD(year, md.m, md.day);
+          var list = key ? state.byDate[key] || [] : [];
+          var cell;
+
+          if (!list.length) {
+            cell = document.createElement("div");
+            cell.className = "otd-cell is-empty";
+            cell.setAttribute("role", "gridcell");
+            var empty = document.createElement("span");
+            empty.className = "otd-empty-label";
+            empty.textContent = key
+              ? md.m + "月" + md.day + "日"
+              : "—";
+            cell.appendChild(empty);
+          } else {
+            cell = document.createElement("button");
+            cell.type = "button";
+            cell.className = "otd-cell has-media";
+            cell.setAttribute("role", "gridcell");
+            var cover = list[0];
+            cell.setAttribute(
+              "aria-label",
+              (key || "") +
+                "，" +
+                list.length +
+                " 張" +
+                (cover.alt ? "，" + cover.alt : "")
+            );
+            var img = document.createElement("img");
+            img.className = "otd-thumb";
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.alt = "";
+            img.src =
+              cover.type === "video" ? cover.thumb || cover.src : cover.src;
+            cell.appendChild(img);
+            if (cover.type === "video") {
+              var play = document.createElement("span");
+              play.className = "otd-play";
+              play.innerHTML =
+                '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+              cell.appendChild(play);
+            }
+            if (list.length > 1) {
+              var count = document.createElement("span");
+              count.className = "otd-count";
+              count.textContent = String(list.length);
+              cell.appendChild(count);
+            }
+            cell.addEventListener("click", function () {
+              openItem(cover);
+            });
+          }
+
+          if (colIdx === focusCol) cell.classList.add("is-focus-col");
+          if (key && key === todayKey) cell.classList.add("is-today-mark");
+          matrix.appendChild(cell);
+        });
+      });
+    }
+
+    function shift(days) {
+      state.focus = addDays(state.focus, days);
+      render();
+    }
+
+    prevBtn && prevBtn.addEventListener("click", function () { shift(-1); });
+    nextBtn && nextBtn.addEventListener("click", function () { shift(1); });
+    todayBtn &&
+      todayBtn.addEventListener("click", function () {
+        state.focus = startOfLocalDay(new Date());
+        render();
+      });
+
+    function ingest(list) {
+      indexItems(Array.isArray(list) ? list : []);
+      render();
+    }
+
+    function tryFromGlobal() {
+      if (window.SimbaMedia && typeof window.SimbaMedia.getItems === "function") {
+        var items = window.SimbaMedia.getItems();
+        if (items && items.length) {
+          ingest(items);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    document.addEventListener("simba:media-ready", function () {
+      tryFromGlobal();
+    });
+
+    if (!tryFromGlobal()) {
+      fetch("media.json", { cache: "no-cache" })
+        .then(function (res) {
+          if (!res.ok) throw new Error("media.json " + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          ingest(data);
+        })
+        .catch(function (err) {
+          console.warn(err);
+          if (hint) hint.textContent = "無法載入相簿資料。";
+        });
+    }
+  }
+
+
   function boot() {
     initCalendar();
     initGallery();
+    initOnThisDay();
     function startEngagement() {
       initEngagement();
     }
