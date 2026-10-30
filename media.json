@@ -12,6 +12,30 @@
     "alt": "grey toy poodle sitting on foam mats with yellow ring toy, fluffy before haircut"
   },
   {
+    "id": "outing-2026-10-30-grandma-1",
+    "type": "image",
+    "src": "images/outing-2026-10-30-grandma-1.jpg",
+    "date": "2026-10-30",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-10-30-grandma-walk",
+    "alt": "night walk: grey toy poodle looking up at grandma in denim dress on Hong Kong sidewalk"
+  },
+  {
+    "id": "outing-2026-10-30-grandma-2",
+    "type": "image",
+    "src": "images/outing-2026-10-30-grandma-2.jpg",
+    "date": "2026-10-30",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-10-30-grandma-walk",
+    "alt": "night walk: grey toy poodle looking up from sidewalk with yellow leash, orange trash bin behind"
+  },
+  {
     "id": "outing-2026-10-29-sim-pig-1",
     "type": "image",
     "src": "images/outing-2026-10-29-sim-pig.jpg",
