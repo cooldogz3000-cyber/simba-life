@@ -1,5 +1,5 @@
 /**
- * Simba 生活日記 — 靜態展示 + 日曆導覽（訪客無法新增紀錄）
+ * Simba 生活日記 — 靜態展示 + 月曆縮圖導覽（訪客無法新增紀錄）
  */
 (function () {
   "use strict";
@@ -137,189 +137,269 @@
     }, 1600);
   }
 
-  function initCalendar() {
-    var root = document.querySelector("[data-calendar]");
+
+  function initMediaMonth() {
+    var root = document.querySelector("[data-media-month]");
     if (!root) return;
 
-    var grid = root.querySelector("[data-cal-grid]");
-    var label = root.querySelector("[data-cal-label]");
-    var hint = root.querySelector("[data-cal-hint]");
-    var dayList = root.querySelector("[data-cal-day-list]");
-    var prevBtn = root.querySelector("[data-cal-prev]");
-    var nextBtn = root.querySelector("[data-cal-next]");
+    var grid = root.querySelector("[data-mm-grid]");
+    var label = root.querySelector("[data-mm-label]");
+    var hint = root.querySelector("[data-mm-hint]");
+    var prevBtn = root.querySelector("[data-mm-prev]");
+    var nextBtn = root.querySelector("[data-mm-next]");
+    var todayBtn = root.querySelector("[data-mm-today]");
     if (!grid || !label) return;
 
-    var records = discoverRecords();
-    var days = Object.keys(records).sort();
+    var state = {
+      byDate: Object.create(null), // dayKey -> media items[]
+      records: discoverRecords(),
+      viewY: null,
+      viewM: null
+    };
 
-    var viewY;
-    var viewM;
-    if (days.length) {
-      var latest = days[days.length - 1];
-      var ym = parseYearMonthFromKey(latest);
-      viewY = ym.y;
-      viewM = ym.m;
-    } else {
-      var now = new Date();
-      viewY = now.getFullYear();
-      viewM = now.getMonth();
-    }
-
-    var selectedDay = null;
-
-    function renderDayList(dayKey) {
-      if (!dayList) return;
-      if (!dayKey || !records[dayKey]) {
-        dayList.hidden = true;
-        dayList.innerHTML = "";
-        return;
-      }
-      selectedDay = dayKey;
-      var items = records[dayKey];
-      var html =
-        '<p class="calendar-day-list-title">' +
-        formatDayLabel(dayKey) +
-        " · " +
-        items.length +
-        " 則</p><ul>";
-      items.forEach(function (item, i) {
-        var href =
-          i === 0
-            ? "#day-" + dayKey
-            : item.el.id
-              ? "#" + item.el.id
-              : "#day-" + dayKey;
-        html +=
-          '<li><a href="' +
-          href +
-          '" data-jump-day="' +
-          dayKey +
-          '">' +
-          escapeHtml(item.title) +
-          "</a></li>";
+    function indexMedia(list) {
+      state.byDate = Object.create(null);
+      (list || []).forEach(function (it) {
+        if (!it || !it.date) return;
+        var key = parseDayKey(it.date);
+        if (!key) return;
+        if (!state.byDate[key]) state.byDate[key] = [];
+        state.byDate[key].push(it);
       });
-      html += "</ul>";
-      dayList.innerHTML = html;
-      dayList.hidden = false;
-      dayList.querySelectorAll("[data-jump-day]").forEach(function (a) {
-        a.addEventListener("click", function (e) {
-          e.preventDefault();
-          scrollToDay(a.getAttribute("data-jump-day"));
+      Object.keys(state.byDate).forEach(function (k) {
+        state.byDate[k].sort(function (a, b) {
+          return String(a.id || "") < String(b.id || "") ? 1 : -1;
         });
       });
     }
 
-    function escapeHtml(s) {
-      return String(s)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;");
+    function pickDefaultMonth() {
+      var keys = Object.keys(state.byDate).sort();
+      if (!keys.length) {
+        keys = Object.keys(state.records).sort();
+      }
+      if (keys.length) {
+        var ym = parseYearMonthFromKey(keys[keys.length - 1]);
+        state.viewY = ym.y;
+        state.viewM = ym.m;
+      } else {
+        var now = new Date();
+        state.viewY = now.getFullYear();
+        state.viewM = now.getMonth();
+      }
+    }
+
+    function thumbSrc(item) {
+      if (!item) return "";
+      if (item.type === "video") return item.thumb || item.poster || item.src || "";
+      return item.src || "";
+    }
+
+    function openDay(dayKey) {
+      var list = state.byDate[dayKey] || [];
+      if (list.length && window.SimbaMedia && typeof window.SimbaMedia.open === "function") {
+        window.SimbaMedia.open(list[0]);
+        return;
+      }
+      scrollToDay(dayKey);
     }
 
     function render() {
-      label.textContent = formatMonthLabel(viewY, viewM);
+      label.textContent = formatMonthLabel(state.viewY, state.viewM);
       grid.innerHTML = "";
 
-      var first = new Date(viewY, viewM, 1);
-      var startPad = first.getDay(); // 0=Sun
-      var daysInMonth = new Date(viewY, viewM + 1, 0).getDate();
+      var first = new Date(state.viewY, state.viewM, 1);
+      var startPad = first.getDay(); // 0=Sun — matches weekday row 日–六
+      var daysInMonth = new Date(state.viewY, state.viewM + 1, 0).getDate();
       var todayKey = toDayKey(new Date());
+      var monthPrefix = state.viewY + "-" + pad2(state.viewM + 1) + "-";
+      var mediaDays = 0;
 
       for (var i = 0; i < startPad; i++) {
         var empty = document.createElement("div");
-        empty.className = "calendar-cell is-empty";
+        empty.className = "media-month-cell is-pad";
         empty.setAttribute("aria-hidden", "true");
         grid.appendChild(empty);
       }
 
       for (var d = 1; d <= daysInMonth; d++) {
-        var key = viewY + "-" + pad2(viewM + 1) + "-" + pad2(d);
-        var btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "calendar-cell";
-        btn.setAttribute("role", "gridcell");
-        btn.dataset.date = key;
+        var key = monthPrefix + pad2(d);
+        var list = state.byDate[key] || [];
+        var hasMedia = list.length > 0;
+        var hasRecord = !!(state.records[key] && state.records[key].length);
+        if (hasMedia) mediaDays += 1;
 
-        var has = !!records[key];
-        if (has) btn.classList.add("has-record");
-        if (key === todayKey) btn.classList.add("is-today");
-        if (key === selectedDay) btn.classList.add("is-selected");
-
-        btn.innerHTML =
-          '<span class="calendar-day-num">' +
-          d +
-          "</span>" +
-          (has ? '<span class="calendar-dot" aria-hidden="true"></span>' : "");
-
-        if (has) {
-          var count = records[key].length;
-          btn.setAttribute(
+        var cell;
+        if (hasMedia) {
+          cell = document.createElement("button");
+          cell.type = "button";
+          cell.className = "media-month-cell has-media";
+          cell.setAttribute("role", "gridcell");
+          cell.dataset.date = key;
+          cell.setAttribute(
             "aria-label",
-            formatDayLabel(key) + "，有 " + count + " 則記錄"
+            formatDayLabel(key) + "，" + list.length + " 張媒體"
           );
-          btn.addEventListener(
+
+          var cover = list[0];
+          var img = document.createElement("img");
+          img.className = "media-month-thumb";
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.alt = "";
+          img.src = thumbSrc(cover);
+          cell.appendChild(img);
+
+          if (cover.type === "video") {
+            var play = document.createElement("span");
+            play.className = "media-month-play";
+            play.setAttribute("aria-hidden", "true");
+            play.innerHTML =
+              '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+            cell.appendChild(play);
+          }
+
+          var dayNum = document.createElement("span");
+          dayNum.className = "media-month-day-num on-thumb";
+          dayNum.textContent = String(d);
+          cell.appendChild(dayNum);
+
+          if (list.length > 1) {
+            var count = document.createElement("span");
+            count.className = "media-month-count";
+            count.textContent = String(list.length);
+            cell.appendChild(count);
+          }
+
+          cell.addEventListener(
             "click",
             (function (dayKey) {
               return function () {
-                selectedDay = dayKey;
-                render();
-                renderDayList(dayKey);
-                scrollToDay(dayKey);
+                openDay(dayKey);
               };
             })(key)
           );
         } else {
-          btn.disabled = true;
-          btn.setAttribute("aria-label", formatDayLabel(key) + "，無記錄");
+          cell = document.createElement("div");
+          cell.className = "media-month-cell is-empty" + (hasRecord ? " has-record" : "");
+          cell.setAttribute("role", "gridcell");
+          cell.dataset.date = key;
+          var num = document.createElement("span");
+          num.className = "media-month-day-num";
+          num.textContent = String(d);
+          cell.appendChild(num);
+          if (hasRecord) {
+            cell.setAttribute("tabindex", "0");
+            cell.setAttribute("aria-label", formatDayLabel(key) + "，有文字記錄");
+            cell.addEventListener(
+              "click",
+              (function (dayKey) {
+                return function () {
+                  scrollToDay(dayKey);
+                };
+              })(key)
+            );
+            cell.addEventListener(
+              "keydown",
+              (function (dayKey) {
+                return function (e) {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    scrollToDay(dayKey);
+                  }
+                };
+              })(key)
+            );
+          } else {
+            cell.setAttribute("aria-label", formatDayLabel(key));
+          }
         }
 
-        grid.appendChild(btn);
+        if (key === todayKey) {
+          cell.classList.add("is-today");
+          var badge = document.createElement("span");
+          badge.className = "media-month-today-badge";
+          badge.textContent = "今";
+          cell.appendChild(badge);
+        }
+
+        grid.appendChild(cell);
       }
 
       if (hint) {
-        var monthKeys = days.filter(function (k) {
-          return k.indexOf(viewY + "-" + pad2(viewM + 1) + "-") === 0;
-        });
-        hint.textContent = monthKeys.length
-          ? "本月有 " + monthKeys.length + " 天有記錄（圓點標記）"
-          : "本月尚無記錄 · 圓點表示有記錄的日子";
+        hint.textContent = mediaDays
+          ? "本月有 " + mediaDays + " 天有相片或影片"
+          : "本月尚無媒體 · 有縮圖的日子可點開";
       }
     }
 
-    if (prevBtn) {
-      prevBtn.addEventListener("click", function () {
-        viewM -= 1;
-        if (viewM < 0) {
-          viewM = 11;
-          viewY -= 1;
-        }
-        render();
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener("click", function () {
-        viewM += 1;
-        if (viewM > 11) {
-          viewM = 0;
-          viewY += 1;
-        }
-        render();
-      });
-    }
-
-    render();
-
-    // Deep-link: #day-YYYY-MM-DD
-    var hash = location.hash.replace(/^#/, "");
-    var hashDay = hash.match(/^day-(\d{4}-\d{2}-\d{2})$/);
-    if (hashDay && records[hashDay[1]]) {
-      var h = parseYearMonthFromKey(hashDay[1]);
-      viewY = h.y;
-      viewM = h.m;
-      selectedDay = hashDay[1];
+    function shiftMonth(delta) {
+      state.viewM += delta;
+      if (state.viewM < 0) {
+        state.viewM = 11;
+        state.viewY -= 1;
+      } else if (state.viewM > 11) {
+        state.viewM = 0;
+        state.viewY += 1;
+      }
       render();
-      renderDayList(hashDay[1]);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { shiftMonth(-1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { shiftMonth(1); });
+    if (todayBtn) {
+      todayBtn.addEventListener("click", function () {
+        var now = new Date();
+        state.viewY = now.getFullYear();
+        state.viewM = now.getMonth();
+        render();
+      });
+    }
+
+    function ingest(list) {
+      indexMedia(Array.isArray(list) ? list : []);
+      if (state.viewY == null) pickDefaultMonth();
+      // deep-link month from #day-YYYY-MM-DD
+      var hash = location.hash.replace(/^#/, "");
+      var hashDay = hash.match(/^day-(\d{4}-\d{2}-\d{2})$/);
+      if (hashDay) {
+        var h = parseYearMonthFromKey(hashDay[1]);
+        state.viewY = h.y;
+        state.viewM = h.m;
+      }
+      render();
+    }
+
+    function tryFromGlobal() {
+      if (window.SimbaMedia && typeof window.SimbaMedia.getItems === "function") {
+        var items = window.SimbaMedia.getItems();
+        if (items && items.length) {
+          ingest(items);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    document.addEventListener("simba:media-ready", function () {
+      tryFromGlobal();
+    });
+
+    if (!tryFromGlobal()) {
+      fetch("media.json", { cache: "no-cache" })
+        .then(function (res) {
+          if (!res.ok) throw new Error("media.json " + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          ingest(data);
+        })
+        .catch(function (err) {
+          console.warn(err);
+          pickDefaultMonth();
+          render();
+          if (hint) hint.textContent = "無法載入相簿資料。";
+        });
     }
   }
 
@@ -956,260 +1036,9 @@
   }
 
 
-  function initOnThisDay() {
-    var root = document.querySelector("[data-otd]");
-    if (!root) return;
-
-    var matrix = root.querySelector("[data-otd-matrix]");
-    var label = root.querySelector("[data-otd-label]");
-    var hint = root.querySelector("[data-otd-hint]");
-    var prevBtn = root.querySelector("[data-otd-prev]");
-    var nextBtn = root.querySelector("[data-otd-next]");
-    var todayBtn = root.querySelector("[data-otd-today]");
-    if (!matrix || !label) return;
-
-    var WEEKDAYS_MON = ["一", "二", "三", "四", "五", "六", "日"];
-    var state = {
-      items: [],
-      byDate: {},
-      years: [],
-      focus: startOfLocalDay(new Date())
-    };
-
-    function startOfLocalDay(d) {
-      return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-    }
-
-    function addDays(d, n) {
-      return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
-    }
-
-    function mondayOf(d) {
-      var day = d.getDay(); // 0 Sun
-      var diff = day === 0 ? -6 : 1 - day;
-      return addDays(d, diff);
-    }
-
-    function formatOtdLabel(d) {
-      return (
-        d.getMonth() +
-        1 +
-        "月" +
-        d.getDate() +
-        "日（週" +
-        WEEKDAYS_ZH[d.getDay()] +
-        "）"
-      );
-    }
-
-    function mdParts(d) {
-      return { m: d.getMonth() + 1, day: d.getDate() };
-    }
-
-    function keyForYearMD(year, m, day) {
-      // clamp invalid dates (e.g. Feb 30) by checking rollover
-      var dt = new Date(year, m - 1, day);
-      if (dt.getFullYear() !== year || dt.getMonth() !== m - 1 || dt.getDate() !== day) {
-        return null;
-      }
-      return year + "-" + pad2(m) + "-" + pad2(day);
-    }
-
-    function indexItems(list) {
-      state.items = list.slice();
-      state.byDate = {};
-      var yearSet = {};
-      state.items.forEach(function (it) {
-        if (!it.date) return;
-        if (!state.byDate[it.date]) state.byDate[it.date] = [];
-        state.byDate[it.date].push(it);
-        yearSet[String(it.date).slice(0, 4)] = true;
-      });
-      Object.keys(state.byDate).forEach(function (k) {
-        state.byDate[k].sort(function (a, b) {
-          return a.id < b.id ? 1 : -1;
-        });
-      });
-      state.years = Object.keys(yearSet)
-        .map(Number)
-        .sort(function (a, b) {
-          return b - a;
-        });
-      // Always include current year for empty rows context
-      var cy = new Date().getFullYear();
-      if (state.years.indexOf(cy) < 0) state.years.unshift(cy);
-    }
-
-    function openItem(item) {
-      if (window.SimbaMedia && typeof window.SimbaMedia.open === "function") {
-        window.SimbaMedia.open(item);
-        return;
-      }
-      // Fallback: jump to gallery filtered by day
-      location.hash = "#gallery?date=" + encodeURIComponent(item.date);
-    }
-
-    function render() {
-      var focus = state.focus;
-      var todayKey = toDayKey(new Date());
-      label.textContent = formatOtdLabel(focus);
-
-      var mon = mondayOf(focus);
-      var cols = [];
-      for (var i = 0; i < 7; i++) cols.push(addDays(mon, i));
-      var focusCol = -1;
-      for (var c = 0; c < 7; c++) {
-        if (toDayKey(cols[c]) === toDayKey(focus)) focusCol = c;
-      }
-
-      matrix.innerHTML = "";
-
-      var corner = document.createElement("div");
-      corner.className = "otd-corner";
-      corner.setAttribute("aria-hidden", "true");
-      matrix.appendChild(corner);
-
-      cols.forEach(function (d, idx) {
-        var head = document.createElement("div");
-        head.className = "otd-weekday";
-        var wd = d.getDay();
-        if (wd === 6) head.classList.add("is-sat");
-        if (wd === 0) head.classList.add("is-sun");
-        head.textContent = "週" + WEEKDAYS_MON[idx];
-        matrix.appendChild(head);
-      });
-
-      if (!state.years.length) {
-        if (hint) hint.textContent = "還沒有可對照的相片，先在相簿加入媒體。";
-        return;
-      }
-      if (hint) {
-        hint.textContent = "點格子開啟相片；右下角數字是當天張數。";
-      }
-
-      state.years.forEach(function (year) {
-        var yEl = document.createElement("div");
-        yEl.className = "otd-year";
-        yEl.textContent = String(year);
-        matrix.appendChild(yEl);
-
-        cols.forEach(function (templateDay, colIdx) {
-          var md = mdParts(templateDay);
-          var key = keyForYearMD(year, md.m, md.day);
-          var list = key ? state.byDate[key] || [] : [];
-          var cell;
-
-          if (!list.length) {
-            cell = document.createElement("div");
-            cell.className = "otd-cell is-empty";
-            cell.setAttribute("role", "gridcell");
-            var empty = document.createElement("span");
-            empty.className = "otd-empty-label";
-            empty.textContent = key
-              ? md.m + "月" + md.day + "日"
-              : "—";
-            cell.appendChild(empty);
-          } else {
-            cell = document.createElement("button");
-            cell.type = "button";
-            cell.className = "otd-cell has-media";
-            cell.setAttribute("role", "gridcell");
-            var cover = list[0];
-            cell.setAttribute(
-              "aria-label",
-              (key || "") +
-                "，" +
-                list.length +
-                " 張" +
-                (cover.alt ? "，" + cover.alt : "")
-            );
-            var img = document.createElement("img");
-            img.className = "otd-thumb";
-            img.loading = "lazy";
-            img.decoding = "async";
-            img.alt = "";
-            img.src =
-              cover.type === "video" ? cover.thumb || cover.src : cover.src;
-            cell.appendChild(img);
-            if (cover.type === "video") {
-              var play = document.createElement("span");
-              play.className = "otd-play";
-              play.innerHTML =
-                '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-              cell.appendChild(play);
-            }
-            if (list.length > 1) {
-              var count = document.createElement("span");
-              count.className = "otd-count";
-              count.textContent = String(list.length);
-              cell.appendChild(count);
-            }
-            cell.addEventListener("click", function () {
-              openItem(cover);
-            });
-          }
-
-          if (colIdx === focusCol) cell.classList.add("is-focus-col");
-          if (key && key === todayKey) cell.classList.add("is-today-mark");
-          matrix.appendChild(cell);
-        });
-      });
-    }
-
-    function shift(days) {
-      state.focus = addDays(state.focus, days);
-      render();
-    }
-
-    prevBtn && prevBtn.addEventListener("click", function () { shift(-1); });
-    nextBtn && nextBtn.addEventListener("click", function () { shift(1); });
-    todayBtn &&
-      todayBtn.addEventListener("click", function () {
-        state.focus = startOfLocalDay(new Date());
-        render();
-      });
-
-    function ingest(list) {
-      indexItems(Array.isArray(list) ? list : []);
-      render();
-    }
-
-    function tryFromGlobal() {
-      if (window.SimbaMedia && typeof window.SimbaMedia.getItems === "function") {
-        var items = window.SimbaMedia.getItems();
-        if (items && items.length) {
-          ingest(items);
-          return true;
-        }
-      }
-      return false;
-    }
-
-    document.addEventListener("simba:media-ready", function () {
-      tryFromGlobal();
-    });
-
-    if (!tryFromGlobal()) {
-      fetch("media.json", { cache: "no-cache" })
-        .then(function (res) {
-          if (!res.ok) throw new Error("media.json " + res.status);
-          return res.json();
-        })
-        .then(function (data) {
-          ingest(data);
-        })
-        .catch(function (err) {
-          console.warn(err);
-          if (hint) hint.textContent = "無法載入相簿資料。";
-        });
-    }
-  }
-
-
   function boot() {
-    initCalendar();
+    initMediaMonth();
     initGallery();
-    initOnThisDay();
     function startEngagement() {
       initEngagement();
     }

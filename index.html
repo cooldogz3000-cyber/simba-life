@@ -20,10 +20,8 @@
       <nav class="nav" aria-label="主要導覽">
         <a href="#about">關於</a>
         <a href="#childhood">小時候</a>
-        <a href="#calendar">日曆</a>
+        <a href="#media-month">月曆</a>
         <a href="#journal">日記</a>
-        <a href="#outings">外出</a>
-        <a href="#on-this-day">同日</a>
         <a href="#gallery">相簿</a>
       </nav>
     </div>
@@ -42,7 +40,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#journal">翻開日記</a>
-            <a class="btn btn-ghost" href="#outings">看看外出</a>
+            <a class="btn btn-ghost" href="#media-month">這個月</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -80,44 +78,45 @@
       </div>
     </section>
 
-    <!-- 日曆 -->
-    <section class="section section-alt" id="calendar" aria-labelledby="calendar-title">
+    <!-- 月曆縮圖 -->
+    <section class="section section-alt" id="media-month" aria-labelledby="media-month-title">
       <div class="container">
         <header class="section-header">
-          <p class="eyebrow">日曆</p>
-          <h2 id="calendar-title">哪一天有記錄</h2>
-          <p class="section-desc">有標記的日子表示那天有小時候、日記或外出；點一下就會跳到當日內容。</p>
+          <p class="eyebrow">月曆</p>
+          <h2 id="media-month-title">這個月的 Simba</h2>
+          <p class="section-desc">有照片的日子會顯示縮圖；點一下可開啟相片或跳到當天日記。</p>
         </header>
 
-        <div class="calendar-panel" data-calendar>
-          <div class="calendar-toolbar">
-            <button type="button" class="calendar-nav-btn" data-cal-prev aria-label="上個月">‹</button>
-            <h3 class="calendar-month-label" data-cal-label>2026年10月</h3>
-            <button type="button" class="calendar-nav-btn" data-cal-next aria-label="下個月">›</button>
+        <div class="media-month-panel" data-media-month>
+          <div class="media-month-toolbar">
+            <button type="button" class="media-month-nav-btn" data-mm-prev aria-label="上個月">‹</button>
+            <div class="media-month-heading">
+              <h3 class="media-month-label" data-mm-label>2026年10月</h3>
+              <button type="button" class="media-month-today-btn" data-mm-today>今天</button>
+            </div>
+            <button type="button" class="media-month-nav-btn" data-mm-next aria-label="下個月">›</button>
           </div>
-          <div class="calendar-weekdays" aria-hidden="true">
+          <div class="media-month-weekdays" aria-hidden="true">
             <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
           </div>
-          <div class="calendar-grid" data-cal-grid role="grid" aria-labelledby="calendar-title"></div>
-          <p class="calendar-hint" data-cal-hint>圓點表示該日有記錄</p>
-          <div class="calendar-day-list" data-cal-day-list hidden></div>
+          <div class="media-month-grid" data-mm-grid role="grid" aria-labelledby="media-month-title"></div>
+          <p class="media-month-hint" data-mm-hint>有縮圖的日子表示當天有相片或影片</p>
         </div>
       </div>
     </section>
 
-    <!-- 生活日記 -->
+    <!-- 生活點滴（日記＋外出） -->
     <section class="section" id="journal" aria-labelledby="journal-title">
       <div class="container">
         <header class="section-header">
           <p class="eyebrow">日記</p>
-          <h2 id="journal-title">生活日記</h2>
-          <p class="section-desc">日常點滴，慢慢累積成一本只屬於 Simba 的故事書。</p>
+          <h2 id="journal-title">生活點滴</h2>
+          <p class="section-desc">日常與外出，按日子排，最新在上。</p>
         </header>
 
-        <div class="timeline" id="journal-list">
+        <div class="life-feed" id="journal-list">
 
-
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-30" id="day-2026-10-30-precut">
+<article class="timeline-card" data-kind="journal" data-date="2026-10-30" id="day-2026-10-30-precut">
             <time datetime="2026-10-30">2026年10月30日 · 週五</time>
             <h3>剪毛前的辛巴</h3>
             
@@ -132,116 +131,7 @@
             </div>
           </article>
 
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-28" id="day-2026-10-28-morning">
-            <time datetime="2026-10-28">2026年10月28日 · 週三</time>
-            <h3>香港早晨</h3>
-            
-            <div class="entry-media">
-              <img
-                class="journal-photo"
-                src="images/simba-morning-2026-10-28.jpg"
-                alt="grey toy poodle sleeping on back in plush bed"
-                decoding="async"
-                style="aspect-ratio: 1600 / 1200"
-              />
-            </div>
-          </article>
-
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-27" id="day-2026-10-27-cake">
-            <time datetime="2026-10-27">2026年10月27日 · 週二</time>
-            <h3>蛋糕小狗</h3>
-            
-            <div class="entry-media">
-              <img
-                class="journal-photo"
-                src="images/simba-cake-2026-10-27.jpg"
-                alt="前景黑芝麻千層蛋糕切片，背景模糊的灰色貴賓犬 Simba"
-                decoding="async"
-                style="aspect-ratio: 1600 / 900"
-              />
-            </div>
-          </article>
-
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-teeth">
-            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
-            <h3>牙小狗</h3>
-            
-            <div class="entry-media">
-              <img
-                class="journal-photo"
-                src="images/simba-teeth-2026-10-26.jpg"
-                alt="Simba 仰望鏡頭，口微開露出下排牙，黃項圈"
-                decoding="async"
-                style="aspect-ratio: 4032 / 3024"
-              />
-            </div>
-          </article>
-
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-rest">
-            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
-            <h3>休息小狗</h3>
-            
-            <div class="entry-media">
-              <img
-                class="journal-photo"
-                src="images/simba-rest-2026-10-26.jpg"
-                alt="Simba 趴在淺色毛毯窩裡靠著灰色毛公仔"
-                decoding="async"
-                style="aspect-ratio: 1600 / 938"
-              />
-            </div>
-          </article>
-
-          <article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26">
-            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
-            <h3>Simba 等了一日</h3>
-            
-            <div class="entry-media">
-              <img
-                class="journal-photo"
-                src="images/simba-wait-2026-10-26.jpg"
-                alt="Simba 趴在深灰磁磚地板上伸腿等，紅項圈"
-                decoding="async"
-                style="aspect-ratio: 1495 / 900"
-              />
-            </div>
-          </article>
-
-          <article class="timeline-card" data-kind="journal" data-date="2023-08-18" id="day-2023-08-neuter">
-            <time datetime="2023-08-18">2023年8月</time>
-            <h3>我絕育了</h3>
-            <div class="entry-media">
-              <video
-                class="outing-video childhood-video"
-                controls
-                playsinline
-                preload="metadata"
-                poster="images/childhood-2023-08-neuter-poster.jpg"
-                width="1280"
-                height="720"
-                aria-label="Simba 灰色貴賓坐在白色圍欄窩裡，戴透明頭罩（伊莉莎白圈），旁邊有 Duffy 枕頭同毯子"
-              >
-                <source src="videos/childhood-2023-08-neuter.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 外出記錄 -->
-    <section class="section section-alt" id="outings" aria-labelledby="outings-title">
-      <div class="container">
-        <header class="section-header">
-          <p class="eyebrow">外出</p>
-          <h2 id="outings-title">外出記錄</h2>
-          <p class="section-desc">一起呼吸外面的空氣——日期，與當下的一小段話。</p>
-        </header>
-
-                <div class="outing-grid" id="outing-list">
-
-          <article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-30" id="outing-2026-10-30-grandma-walk">
+<article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-30" id="outing-2026-10-30-grandma-walk">
             <div class="outing-media-stack" aria-label="同嫲嫲散步相片">
               <div class="outing-visual">
                 <img
@@ -268,7 +158,7 @@
             </div>
           </article>
 
-          <article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-29" id="outing-2026-10-29-sim-pig">
+<article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-29" id="outing-2026-10-29-sim-pig">
             <div class="outing-media-stack" aria-label="sim 豬相片">
               <div class="outing-visual">
                 <img
@@ -295,7 +185,22 @@
             </div>
           </article>
 
-          <article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-28" id="outing-2026-10-28-rings">
+<article class="timeline-card" data-kind="journal" data-date="2026-10-28" id="day-2026-10-28-morning">
+            <time datetime="2026-10-28">2026年10月28日 · 週三</time>
+            <h3>香港早晨</h3>
+            
+            <div class="entry-media">
+              <img
+                class="journal-photo"
+                src="images/simba-morning-2026-10-28.jpg"
+                alt="grey toy poodle sleeping on back in plush bed"
+                decoding="async"
+                style="aspect-ratio: 1600 / 1200"
+              />
+            </div>
+          </article>
+
+<article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-28" id="outing-2026-10-28-rings">
             <div class="outing-media-stack" aria-label="同佢玩緊圈圈相片與短片">
               <div class="outing-visual">
                 <img
@@ -389,9 +294,22 @@
             </div>
           </article>
 
+<article class="timeline-card" data-kind="journal" data-date="2026-10-27" id="day-2026-10-27-cake">
+            <time datetime="2026-10-27">2026年10月27日 · 週二</time>
+            <h3>蛋糕小狗</h3>
+            
+            <div class="entry-media">
+              <img
+                class="journal-photo"
+                src="images/simba-cake-2026-10-27.jpg"
+                alt="前景黑芝麻千層蛋糕切片，背景模糊的灰色貴賓犬 Simba"
+                decoding="async"
+                style="aspect-ratio: 1600 / 900"
+              />
+            </div>
+          </article>
 
-
-          <article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-27" id="outing-2026-10-27-night-walk">
+<article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-27" id="outing-2026-10-27-night-walk">
             <div class="outing-media-stack" aria-label="晚上的散步時光相片">
               <div class="outing-visual">
                 <img
@@ -445,9 +363,52 @@
             </div>
           </article>
 
+<article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-teeth">
+            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
+            <h3>牙小狗</h3>
+            
+            <div class="entry-media">
+              <img
+                class="journal-photo"
+                src="images/simba-teeth-2026-10-26.jpg"
+                alt="Simba 仰望鏡頭，口微開露出下排牙，黃項圈"
+                decoding="async"
+                style="aspect-ratio: 4032 / 3024"
+              />
+            </div>
+          </article>
 
-          
-          <article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-26" id="outing-2026-10-26">
+<article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26-rest">
+            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
+            <h3>休息小狗</h3>
+            
+            <div class="entry-media">
+              <img
+                class="journal-photo"
+                src="images/simba-rest-2026-10-26.jpg"
+                alt="Simba 趴在淺色毛毯窩裡靠著灰色毛公仔"
+                decoding="async"
+                style="aspect-ratio: 1600 / 938"
+              />
+            </div>
+          </article>
+
+<article class="timeline-card" data-kind="journal" data-date="2026-10-26" id="day-2026-10-26">
+            <time datetime="2026-10-26">2026年10月26日 · 週一</time>
+            <h3>Simba 等了一日</h3>
+            
+            <div class="entry-media">
+              <img
+                class="journal-photo"
+                src="images/simba-wait-2026-10-26.jpg"
+                alt="Simba 趴在深灰磁磚地板上伸腿等，紅項圈"
+                decoding="async"
+                style="aspect-ratio: 1495 / 900"
+              />
+            </div>
+          </article>
+
+<article class="outing-card outing-card--album" data-kind="outing" data-date="2026-10-26" id="outing-2026-10-26">
             <div class="outing-media-stack" aria-label="行街相片與短片">
               <div class="outing-visual">
                 <img
@@ -504,7 +465,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-sunset">
+<article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-sunset">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -521,7 +482,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-promenade">
+<article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-promenade">
             <div class="outing-visual">
               <img
                 class="outing-img"
@@ -538,7 +499,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-moment">
+<article class="outing-card" data-kind="outing" data-date="2026-10-25" id="outing-2026-10-25-moment">
             <div class="outing-visual">
               <video
                 class="outing-video"
@@ -559,7 +520,7 @@
             </div>
           </article>
 
-          <article class="outing-card" data-kind="outing" data-date="2026-10-19" id="day-2026-10-19">
+<article class="outing-card" data-kind="outing" data-date="2026-10-19" id="day-2026-10-19">
             <div class="outing-visual">
               <video
                 class="outing-video"
@@ -580,37 +541,29 @@
             </div>
           </article>
 
-</div>
-      </div>
-    </section>
-
-
-    <!-- 跨年同日相簿日曆 -->
-    <section class="section section-alt" id="on-this-day" aria-labelledby="otd-title">
-      <div class="container otd-wrap">
-        <header class="section-header">
-          <p class="eyebrow">同日</p>
-          <h2 id="otd-title">每年的這一天</h2>
-          <p class="section-desc">同一天的照片，按年份排成一列，方便對照。</p>
-        </header>
-
-        <div class="otd-panel" data-otd>
-          <div class="otd-toolbar">
-            <button type="button" class="otd-nav-btn" data-otd-prev aria-label="前一天">‹</button>
-            <div class="otd-heading">
-              <h3 class="otd-date-label" data-otd-label>10月30日（週四）</h3>
-              <button type="button" class="otd-today-btn" data-otd-today>今天</button>
+<article class="timeline-card" data-kind="journal" data-date="2023-08-18" id="day-2023-08-neuter">
+            <time datetime="2023-08-18">2023年8月</time>
+            <h3>我絕育了</h3>
+            <div class="entry-media">
+              <video
+                class="outing-video childhood-video"
+                controls
+                playsinline
+                preload="metadata"
+                poster="images/childhood-2023-08-neuter-poster.jpg"
+                width="1280"
+                height="720"
+                aria-label="Simba 灰色貴賓坐在白色圍欄窩裡，戴透明頭罩（伊莉莎白圈），旁邊有 Duffy 枕頭同毯子"
+              >
+                <source src="videos/childhood-2023-08-neuter.mp4" type="video/mp4" />
+              </video>
             </div>
-            <button type="button" class="otd-nav-btn" data-otd-next aria-label="後一天">›</button>
-          </div>
+          </article>
 
-          <div class="otd-scroll">
-            <div class="otd-matrix" data-otd-matrix role="grid" aria-labelledby="otd-title"></div>
-          </div>
-          <p class="otd-hint" data-otd-hint>點格子開啟相片；右下角數字是當天張數。</p>
         </div>
       </div>
     </section>
+
 
     <!-- 相簿／影片牆 -->
     <section class="section" id="gallery" aria-labelledby="gallery-title">
