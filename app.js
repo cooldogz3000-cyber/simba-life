@@ -191,14 +191,22 @@
 
     function thumbSrc(item) {
       if (!item) return "";
-      if (item.type === "video") return item.thumb || item.poster || item.src || "";
-      return item.src || "";
+      return item.thumb || item.poster || item.src || "";
+    }
+
+    function pickCover(list) {
+      if (!list || !list.length) return null;
+      for (var i = 0; i < list.length; i++) {
+        if (list[i] && list[i].monthCover) return list[i];
+      }
+      return list[0];
     }
 
     function openDay(dayKey) {
       var list = state.byDate[dayKey] || [];
-      if (list.length && window.SimbaMedia && typeof window.SimbaMedia.open === "function") {
-        window.SimbaMedia.open(list[0]);
+      var cover = pickCover(list);
+      if (cover && window.SimbaMedia && typeof window.SimbaMedia.open === "function") {
+        window.SimbaMedia.open(cover);
         return;
       }
       scrollToDay(dayKey);
@@ -241,7 +249,7 @@
             formatDayLabel(key) + "，" + list.length + " 張媒體"
           );
 
-          var cover = list[0];
+          var cover = pickCover(list);
           var img = document.createElement("img");
           img.className = "media-month-thumb";
           img.loading = "lazy";
