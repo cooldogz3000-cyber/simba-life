@@ -96,19 +96,9 @@
       "外出"
     ],
     "entryId": "outing-2026-11-01-wm-hotel",
-    "alt": "Simba chasing orange ring toy on turf"
-  },
-  {
-    "id": "outing-2026-11-01-wm-v",
-    "type": "video",
-    "src": "videos/outing-2026-11-01-wm.mp4",
-    "thumb": "images/outing-2026-11-01-wm-poster.jpg",
-    "date": "2026-11-01",
-    "tags": [
-      "外出"
-    ],
-    "entryId": "outing-2026-11-01-wm-hotel",
-    "alt": "WM hotel 短片"
+    "alt": "Simba chasing orange ring toy on turf",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-01.jpg"
   },
   {
     "id": "simba-morning-2026-10-31",
