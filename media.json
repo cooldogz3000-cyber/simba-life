@@ -1,5 +1,116 @@
 [
   {
+    "id": "outing-2026-11-01-wm-1",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-1.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "grey toy poodle in pet stroller looking up with tongue blep"
+  },
+  {
+    "id": "outing-2026-11-01-wm-2",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-2.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "grey toy poodle resting chin on pet stroller rim"
+  },
+  {
+    "id": "outing-2026-11-01-wm-3",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-3.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "beef stew rice plate with Simba in stroller wearing bandana"
+  },
+  {
+    "id": "outing-2026-11-01-wm-4",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-4.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba with bandana between jack-o-lantern lantern stacks"
+  },
+  {
+    "id": "outing-2026-11-01-wm-5",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-5.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba sitting before pumpkin lanterns with witch hats"
+  },
+  {
+    "id": "outing-2026-11-01-wm-6",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-6.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba standing on wooden deck looking back"
+  },
+  {
+    "id": "outing-2026-11-01-wm-7",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-7.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba on deck with orange ring toy in mouth"
+  },
+  {
+    "id": "outing-2026-11-01-wm-8",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-8.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba running on turf with orange ring toy"
+  },
+  {
+    "id": "outing-2026-11-01-wm-9",
+    "type": "image",
+    "src": "images/outing-2026-11-01-wm-9.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "Simba chasing orange ring toy on turf"
+  },
+  {
+    "id": "outing-2026-11-01-wm-v",
+    "type": "video",
+    "src": "videos/outing-2026-11-01-wm.mp4",
+    "thumb": "images/outing-2026-11-01-wm-poster.jpg",
+    "date": "2026-11-01",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-01-wm-hotel",
+    "alt": "WM hotel 短片"
+  },
+  {
     "id": "simba-morning-2026-10-31",
     "type": "image",
     "src": "images/simba-morning-2026-10-31.jpg",
