@@ -1,5 +1,43 @@
 [
   {
+    "id": "simba-canned-2026-11-03-1",
+    "type": "image",
+    "src": "images/simba-canned-2026-11-03-1.jpg",
+    "date": "2026-11-03",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-03-canned",
+    "alt": "indoor marble floor: grey toy poodle looking up wearing plaid necktie bib",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-03.jpg"
+  },
+  {
+    "id": "simba-canned-2026-11-03-2",
+    "type": "image",
+    "src": "images/simba-canned-2026-11-03-2.jpg",
+    "date": "2026-11-03",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-03-canned",
+    "alt": "outdoor brick: grey toy poodle looking up on yellow-black leash"
+  },
+  {
+    "id": "simba-canned-2026-11-03-3",
+    "type": "image",
+    "src": "images/simba-canned-2026-11-03-3.jpg",
+    "date": "2026-11-03",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-03-canned",
+    "alt": "night sidewalk: grey toy poodle squatting to poop"
+  },
+  {
     "id": "outing-2026-11-01-wm-1",
     "type": "image",
     "src": "images/outing-2026-11-01-wm-1.jpg",
