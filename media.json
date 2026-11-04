@@ -74,6 +74,69 @@
     "alt": "night sidewalk: grey toy poodle squatting to poop"
   },
   {
+    "id": "simba-wm-hotel-2026-11-02-1",
+    "type": "image",
+    "src": "images/simba-wm-hotel-2026-11-02-1.jpg",
+    "date": "2026-11-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-02-wm-hotel",
+    "alt": "woman in white dress on balcony with grey toy poodle on shoulder overlooking Sai Kung waterfront"
+  },
+  {
+    "id": "simba-wm-hotel-2026-11-02-2",
+    "type": "image",
+    "src": "images/simba-wm-hotel-2026-11-02-2.jpg",
+    "date": "2026-11-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-02-wm-hotel",
+    "alt": "grey toy poodle on turf with red check bandana beside orange ring toy"
+  },
+  {
+    "id": "simba-wm-hotel-2026-11-02-3",
+    "type": "image",
+    "src": "images/simba-wm-hotel-2026-11-02-3.jpg",
+    "date": "2026-11-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-02-wm-hotel",
+    "alt": "anniversary thank-you card illustration held over infinity pool and bay"
+  },
+  {
+    "id": "simba-wm-hotel-2026-11-02-4",
+    "type": "image",
+    "src": "images/simba-wm-hotel-2026-11-02-4.jpg",
+    "date": "2026-11-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-02-wm-hotel",
+    "alt": "grey toy poodle with orange ring in mouth between wooden slat walls",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-02.jpg"
+  },
+  {
+    "id": "simba-wm-hotel-2026-11-02-v",
+    "type": "video",
+    "src": "videos/simba-wm-hotel-2026-11-02.mp4",
+    "thumb": "images/simba-wm-hotel-2026-11-02-poster.jpg",
+    "date": "2026-11-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-02-wm-hotel",
+    "alt": "Simba playing with orange ring on WM hotel patio"
+  },
+  {
     "id": "outing-2026-11-01-wm-1",
     "type": "image",
     "src": "images/outing-2026-11-01-wm-1.jpg",
