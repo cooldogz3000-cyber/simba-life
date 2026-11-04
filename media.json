@@ -1,5 +1,41 @@
 [
   {
+    "id": "outing-2026-11-04-mom-walk-1",
+    "type": "image",
+    "src": "images/outing-2026-11-04-mom-walk-1.jpg",
+    "date": "2026-11-04",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-04-mom-walk",
+    "alt": "Simba side profile on grass with blue collar",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-04.jpg"
+  },
+  {
+    "id": "outing-2026-11-04-mom-walk-2",
+    "type": "image",
+    "src": "images/outing-2026-11-04-mom-walk-2.jpg",
+    "date": "2026-11-04",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-04-mom-walk",
+    "alt": "overhead walk on sidewalk with neon yellow leash"
+  },
+  {
+    "id": "outing-2026-11-04-mom-walk-v",
+    "type": "video",
+    "src": "videos/outing-2026-11-04-mom-walk.mp4",
+    "thumb": "images/outing-2026-11-04-mom-walk-poster.jpg",
+    "date": "2026-11-04",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-04-mom-walk",
+    "alt": "Simba walk video with mom"
+  },
+  {
     "id": "simba-canned-2026-11-03-1",
     "type": "image",
     "src": "images/simba-canned-2026-11-03-1.jpg",
