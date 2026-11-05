@@ -1,5 +1,29 @@
 [
   {
+    "id": "outing-2026-11-05-crazy-poop-1",
+    "type": "image",
+    "src": "images/outing-2026-11-05-crazy-poop-1.jpg",
+    "date": "2026-11-05",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-05-crazy-poop",
+    "alt": "overhead night walk: grey toy poodle on concrete path toward grass, yellow-black leash, shoe tip at bottom"
+  },
+  {
+    "id": "outing-2026-11-05-crazy-poop-2",
+    "type": "image",
+    "src": "images/outing-2026-11-05-crazy-poop-2.jpg",
+    "date": "2026-11-05",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-05-crazy-poop",
+    "alt": "grey toy poodle looking up on brick sidewalk at night, yellow-black leash",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-05.jpg"
+  },
+  {
     "id": "outing-2026-11-04-mom-walk-1",
     "type": "image",
     "src": "images/outing-2026-11-04-mom-walk-1.jpg",
