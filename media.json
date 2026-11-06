@@ -1,5 +1,43 @@
 [
   {
+    "id": "simba-sparkle-eyes-2026-11-06-1",
+    "type": "image",
+    "src": "images/simba-sparkle-eyes-2026-11-06-1.jpg",
+    "date": "2026-11-06",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-06-sparkle-eyes",
+    "alt": "indoor grey toy poodle smiling at camera, tongue out, red collar, bone tag Simba, sparkling eyes"
+  },
+  {
+    "id": "simba-sparkle-eyes-2026-11-06-2",
+    "type": "image",
+    "src": "images/simba-sparkle-eyes-2026-11-06-2.jpg",
+    "date": "2026-11-06",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-06-sparkle-eyes",
+    "alt": "close-up indoor grey toy poodle with sparkling eyes, pink tongue, red collar bone tag Simba",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-06.jpg"
+  },
+  {
+    "id": "simba-sparkle-eyes-2026-11-06-3",
+    "type": "image",
+    "src": "images/simba-sparkle-eyes-2026-11-06-3.jpg",
+    "date": "2026-11-06",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-06-sparkle-eyes",
+    "alt": "indoor grey toy poodle smiling at camera, red collar Simba tag, soft sparkle in eyes"
+  },
+  {
     "id": "outing-2026-11-05-crazy-poop-1",
     "type": "image",
     "src": "images/outing-2026-11-05-crazy-poop-1.jpg",
