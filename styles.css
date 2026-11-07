@@ -9,6 +9,7 @@
   --accent-hover: #8b4524;
   --warm-line: rgba(29, 29, 31, 0.08);
   --silver: #aeaeb2;
+  --silver-line: color-mix(in srgb, var(--silver) 35%, transparent);
   --radius: 28px;
   --radius-sm: 18px;
   --font: "Noto Sans TC", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", system-ui, sans-serif;
@@ -161,16 +162,16 @@ code {
 
 .eyebrow {
   margin: 0 0 0.75rem;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--accent);
 }
 
 .hero-copy h1 {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 7vw, 4.4rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.035em;
   margin: 0 0 1.1rem;
@@ -188,7 +189,7 @@ code {
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   line-height: 1.55;
   font-weight: 400;
-  color: var(--ink-soft);
+  color: color-mix(in srgb, var(--ink-soft) 55%, var(--muted));
   letter-spacing: -0.01em;
 }
 
@@ -302,6 +303,10 @@ code {
   padding: clamp(4.5rem, 10vw, 7rem) 0;
 }
 
+.section + .section {
+  border-top: 1px solid var(--silver-line);
+}
+
 .section-alt {
   background: rgba(255, 253, 249, 0.55);
 }
@@ -314,7 +319,7 @@ code {
 .section-header h2 {
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 4vw, 2.6rem);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin: 0 0 0.75rem;
@@ -323,8 +328,8 @@ code {
 .section-desc {
   margin: 0 auto;
   max-width: 28em;
-  color: var(--ink-soft);
-  font-size: 1.05rem;
+  color: color-mix(in srgb, var(--ink-soft) 55%, var(--muted));
+  font-size: 1.02rem;
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
@@ -385,12 +390,15 @@ code {
 }
 
 .timeline-card time {
-  display: block;
-  font-size: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  color: var(--muted);
-  margin-bottom: 0.4rem;
-  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--muted) 85%, var(--ink-soft));
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.06em;
 }
 
 .timeline-card h3 {
@@ -421,9 +429,10 @@ code {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .timeline-card .entry-media .childhood-video,
@@ -443,7 +452,7 @@ code {
 /* Merged life feed (journal + outing cards in one column) */
 .life-feed {
   display: grid;
-  gap: 1.35rem;
+  gap: 1.65rem;
   max-width: 720px;
   margin-inline: auto;
 }
@@ -454,6 +463,55 @@ code {
 
 .life-feed .outing-card--album {
   grid-column: auto;
+}
+
+/* 5) Silver hairline between feed cards */
+.life-feed > * + * {
+  position: relative;
+}
+
+.life-feed > * + *::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: calc(-0.825rem);
+  height: 1px;
+  background: var(--silver-line);
+  pointer-events: none;
+}
+
+/* Soften card edges with a silver-warm tint */
+.life-feed .timeline-card,
+.life-feed .outing-card {
+  border-color: color-mix(in srgb, var(--silver) 32%, var(--warm-line));
+}
+
+/* 4) Kind chips via time::before — markup already has data-kind */
+.life-feed .timeline-card[data-kind="journal"] > time::before,
+.life-feed .outing-card[data-kind="outing"] .outing-body time::before {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16rem 0.5rem;
+  border-radius: 980px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  flex: 0 0 auto;
+}
+
+.life-feed .timeline-card[data-kind="journal"] > time::before {
+  content: "日記";
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.life-feed .outing-card[data-kind="outing"] .outing-body time::before {
+  content: "外出";
+  color: var(--ink-soft);
+  background: color-mix(in srgb, var(--silver) 15%, transparent);
 }
 
 @media (min-width: 760px) {
@@ -586,9 +644,14 @@ code {
 }
 
 .outing-body time {
-  font-size: 0.75rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--muted) 85%, var(--ink-soft));
+  letter-spacing: 0.06em;
 }
 
 .outing-body h3 {
@@ -1113,8 +1176,14 @@ code {
 }
 
 .media-month-cell.is-empty {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(0, 0, 0, 0.015);
   padding: 0.35rem 0.4rem;
+}
+
+.media-month-cell.is-empty .media-month-day-num {
+  opacity: 0.42;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .media-month-cell.is-empty.has-record {
@@ -1128,12 +1197,14 @@ code {
 
 .media-month-cell.has-media {
   cursor: pointer;
-  border-color: var(--warm-line);
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--warm-line));
   background: #e8e2d8;
+  box-shadow: 0 2px 8px rgba(168, 90, 50, 0.09);
 }
 
 .media-month-cell.has-media:hover {
-  border-color: rgba(168, 90, 50, 0.4);
+  border-color: rgba(168, 90, 50, 0.42);
+  box-shadow: 0 3px 10px rgba(168, 90, 50, 0.14);
 }
 
 .media-month-cell.has-media:focus-visible,
@@ -1144,6 +1215,10 @@ code {
 
 .media-month-cell.is-today {
   box-shadow: 0 0 0 2px rgba(168, 90, 50, 0.45);
+}
+
+.media-month-cell.has-media.is-today {
+  box-shadow: 0 0 0 2px rgba(168, 90, 50, 0.45), 0 2px 8px rgba(168, 90, 50, 0.09);
 }
 
 .media-month-thumb {
