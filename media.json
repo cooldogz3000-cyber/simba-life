@@ -1,5 +1,19 @@
 [
   {
+    "id": "outing-2026-11-07-night-look-up-1",
+    "type": "image",
+    "src": "images/outing-2026-11-07-night-look-up-1.jpg",
+    "date": "2026-11-07",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-11-07-night-look-up",
+    "alt": "grey toy poodle sitting on brick sidewalk at night looking up, neon yellow leash, blue collar with Simba bone tag",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-07.jpg"
+  },
+  {
     "id": "simba-sparkle-eyes-2026-11-06-1",
     "type": "image",
     "src": "images/simba-sparkle-eyes-2026-11-06-1.jpg",
