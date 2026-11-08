@@ -1,5 +1,44 @@
 [
   {
+    "id": "outing-2026-11-08-great-grandma-1",
+    "type": "image",
+    "src": "images/outing-2026-11-08-great-grandma-1.jpg",
+    "date": "2026-11-08",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-08-great-grandma",
+    "alt": "great-grandma, companion holding Simba in checkered bib, dim sum table at home"
+  },
+  {
+    "id": "outing-2026-11-08-great-grandma-2",
+    "type": "image",
+    "src": "images/outing-2026-11-08-great-grandma-2.jpg",
+    "date": "2026-11-08",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-08-great-grandma",
+    "alt": "companion and great-grandma smiling with Simba at dim sum table"
+  },
+  {
+    "id": "outing-2026-11-08-great-grandma-3",
+    "type": "image",
+    "src": "images/outing-2026-11-08-great-grandma-3.jpg",
+    "date": "2026-11-08",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-08-great-grandma",
+    "alt": "great-grandma at dim sum table with Simba on purple sofa"
+  },
+  {
     "id": "outing-2026-11-08-grandma-yum-cha-1",
     "type": "image",
     "src": "images/outing-2026-11-08-grandma-yum-cha-1.jpg",
