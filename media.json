@@ -1,5 +1,17 @@
 [
   {
+    "id": "outing-2026-11-09-wind-dog-v",
+    "type": "video",
+    "src": "videos/outing-2026-11-09-wind-dog.mp4",
+    "thumb": "images/outing-2026-11-09-wind-dog-poster.jpg",
+    "date": "2026-11-09",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-09-wind-dog",
+    "alt": "grey toy poodle Simba on blue tile lobby floor with leash, alone"
+  },
+  {
     "id": "outing-2026-11-08-great-grandma-1",
     "type": "image",
     "src": "images/outing-2026-11-08-great-grandma-1.jpg",
