@@ -406,6 +406,82 @@
     "thumb": "images/cal-thumb-2026-11-01.jpg"
   },
   {
+    "id": "outing-2026-10-31-cutie-pumpkin-1",
+    "type": "image",
+    "src": "images/outing-2026-10-31-cutie-pumpkin-1.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節"
+    ],
+    "entryId": "outing-2026-10-31-cutie-pumpkin",
+    "alt": "grey toy poodle in orange bandana on stone ledge at night, lit tree and Mickey pumpkin bucket"
+  },
+  {
+    "id": "outing-2026-10-31-cutie-pumpkin-v",
+    "type": "video",
+    "src": "videos/outing-2026-10-31-cutie-pumpkin.mp4",
+    "thumb": "images/outing-2026-10-31-cutie-pumpkin-poster.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節"
+    ],
+    "entryId": "outing-2026-10-31-cutie-pumpkin",
+    "alt": "grey toy poodle smiling on steps at night under lit tree, orange bandana"
+  },
+  {
+    "id": "outing-2026-10-31-cutie-pumpkin-2",
+    "type": "image",
+    "src": "images/outing-2026-10-31-cutie-pumpkin-2.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節",
+      "家人"
+    ],
+    "entryId": "outing-2026-10-31-cutie-pumpkin",
+    "alt": "couple with grey toy poodle in Halloween bandana on stone bench, lit tree behind"
+  },
+  {
+    "id": "outing-2026-10-31-cutie-pumpkin-v2",
+    "type": "video",
+    "src": "videos/outing-2026-10-31-cutie-pumpkin-v2.mp4",
+    "thumb": "images/outing-2026-10-31-cutie-pumpkin-v2-poster.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節"
+    ],
+    "entryId": "outing-2026-10-31-cutie-pumpkin",
+    "alt": "grey toy poodle in pumpkin backpack walking on wooden deck at night"
+  },
+  {
+    "id": "outing-2026-10-31-cutie-pumpkin-3",
+    "type": "image",
+    "src": "images/outing-2026-10-31-cutie-pumpkin-3.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節"
+    ],
+    "entryId": "outing-2026-10-31-cutie-pumpkin",
+    "alt": "grey toy poodle in orange pumpkin costume on concrete, yellow leash"
+  },
+  {
+    "id": "outing-2026-10-31-pumpkin-hearts-1",
+    "type": "image",
+    "src": "images/outing-2026-10-31-pumpkin-hearts-1.jpg",
+    "date": "2026-10-31",
+    "tags": [
+      "外出",
+      "萬聖節",
+      "家人"
+    ],
+    "entryId": "outing-2026-10-31-pumpkin-hearts",
+    "alt": "woman smiling with grey toy poodle in orange bandana on stone bench under lit tree"
+  },
+  {
     "id": "simba-morning-2026-10-31",
     "type": "image",
     "src": "images/simba-morning-2026-10-31.jpg",
@@ -763,6 +839,31 @@
     "alt": "前景黑芝麻千層蛋糕切片，背景模糊的灰色貴賓犬 Simba"
   },
   {
+    "id": "simba-better-with-you-2026-10-26",
+    "type": "image",
+    "src": "images/simba-better-with-you-2026-10-26.jpg",
+    "date": "2026-10-26",
+    "tags": [
+      "日常",
+      "日記",
+      "家人"
+    ],
+    "entryId": "day-2026-10-26-better-with-you",
+    "alt": "woman in pink dress with grey toy poodle on sea wall at sunset"
+  },
+  {
+    "id": "simba-sim-pig-lots-smile-2026-10-26",
+    "type": "image",
+    "src": "images/simba-sim-pig-lots-smile-2026-10-26.jpg",
+    "date": "2026-10-26",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-10-26-sim-pig-lots-smile",
+    "alt": "overhead close-up grey toy poodle smiling in yellow harness on tile floor"
+  },
+  {
     "id": "simba-teeth-2026-10-26",
     "type": "image",
     "src": "images/simba-teeth-2026-10-26.jpg",
@@ -908,6 +1009,66 @@
     ],
     "entryId": "day-2026-10-19",
     "alt": "晚上和小狗散步短片"
+  },
+  {
+    "id": "simba-sim-pig-one-smile-2026-09-07",
+    "type": "image",
+    "src": "images/simba-sim-pig-one-smile-2026-09-07.jpg",
+    "date": "2026-09-07",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-09-07-sim-pig-one-smile",
+    "alt": "indoor grey toy poodle smiling with tongue out, red collar bone tag"
+  },
+  {
+    "id": "outing-2026-09-06-beautiful-day-v",
+    "type": "video",
+    "src": "videos/outing-2026-09-06-beautiful-day.mp4",
+    "thumb": "images/outing-2026-09-06-beautiful-day-poster.jpg",
+    "date": "2026-09-06",
+    "tags": [
+      "外出",
+      "散步"
+    ],
+    "entryId": "outing-2026-09-06-beautiful-day",
+    "alt": "grey toy poodle walking away on sunny palm-lined curved walkway"
+  },
+  {
+    "id": "outing-2026-09-06-go-play-1",
+    "type": "image",
+    "src": "images/outing-2026-09-06-go-play-1.jpg",
+    "date": "2026-09-06",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-09-06-go-play",
+    "alt": "woman crouching toward grey toy poodle on sunny palm walkway, orange ring toy"
+  },
+  {
+    "id": "outing-2026-09-06-go-play-2",
+    "type": "image",
+    "src": "images/outing-2026-09-06-go-play-2.jpg",
+    "date": "2026-09-06",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-09-06-go-play",
+    "alt": "woman smiling holding grey toy poodle and orange ring on sunny walkway"
+  },
+  {
+    "id": "outing-2026-09-06-go-play-3",
+    "type": "image",
+    "src": "images/outing-2026-09-06-go-play-3.jpg",
+    "date": "2026-09-06",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-09-06-go-play",
+    "alt": "grey toy poodle smiling up on paved walkway, orange ring at edge"
   },
   {
     "id": "childhood-2023-08-neuter",
