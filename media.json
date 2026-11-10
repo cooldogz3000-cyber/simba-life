@@ -1,5 +1,38 @@
 [
   {
+    "id": "outing-2026-11-10-autumn-winter-vol1-1",
+    "type": "image",
+    "src": "images/outing-2026-11-10-autumn-winter-vol1-1.jpg",
+    "date": "2026-11-10",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-10-autumn-winter-vol1",
+    "alt": "grey toy poodle Simba in brown fleece jacket looking up on red brick paving at night, leash attached"
+  },
+  {
+    "id": "outing-2026-11-10-autumn-winter-vol1-2",
+    "type": "image",
+    "src": "images/outing-2026-11-10-autumn-winter-vol1-2.jpg",
+    "date": "2026-11-10",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-10-autumn-winter-vol1",
+    "alt": "grey toy poodle Simba in brown fleece jacket standing in profile on red brick paving at night, leash attached"
+  },
+  {
+    "id": "outing-2026-11-10-autumn-winter-vol1-3",
+    "type": "image",
+    "src": "images/outing-2026-11-10-autumn-winter-vol1-3.jpg",
+    "date": "2026-11-10",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-10-autumn-winter-vol1",
+    "alt": "overhead grey toy poodle Simba in brown fleece jacket with white Bear patch lying on brick paving, yellow-green leash"
+  },
+  {
     "id": "outing-2026-11-09-wind-dog-v",
     "type": "video",
     "src": "videos/outing-2026-11-09-wind-dog.mp4",
