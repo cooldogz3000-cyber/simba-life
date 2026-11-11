@@ -1,5 +1,30 @@
 [
   {
+    "id": "outing-2026-11-11-fat-dog-v",
+    "type": "video",
+    "src": "videos/outing-2026-11-11-fat-dog.mp4",
+    "thumb": "images/outing-2026-11-11-fat-dog-poster.jpg",
+    "date": "2026-11-11",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-11-fat-dog",
+    "alt": "grey toy poodle Simba at night on tiled paving, person in beige pants and white sneakers holding an orange ring toy"
+  },
+  {
+    "id": "outing-2026-11-11-fat-dog-v2",
+    "type": "video",
+    "src": "videos/outing-2026-11-11-fat-dog-v2.mp4",
+    "thumb": "images/outing-2026-11-11-fat-dog-v2-poster.jpg",
+    "date": "2026-11-11",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-11-fat-dog",
+    "alt": "grey toy poodle Simba walking on tiled paving at night beside a wooden bench"
+  },
+  {
     "id": "outing-2026-11-10-autumn-winter-vol1-1",
     "type": "image",
     "src": "images/outing-2026-11-10-autumn-winter-vol1-1.jpg",
