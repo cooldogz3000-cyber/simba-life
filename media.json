@@ -1,5 +1,29 @@
 [
   {
+    "id": "simba-naughty-simba-2026-11-12-1",
+    "type": "image",
+    "src": "images/simba-naughty-simba-2026-11-12-1.jpg",
+    "date": "2026-11-12",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-12-naughty-simba",
+    "alt": "indoor grey toy poodle Simba facing camera tongue out, white tissue hanging from mouth, bone tag reddish collar, tiled floor"
+  },
+  {
+    "id": "simba-naughty-simba-2026-11-12-2",
+    "type": "image",
+    "src": "images/simba-naughty-simba-2026-11-12-2.jpg",
+    "date": "2026-11-12",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-12-naughty-simba",
+    "alt": "closer indoor grey toy poodle Simba tongue out holding white tissue, bone tag reddish collar"
+  },
+  {
     "id": "outing-2026-11-11-fat-dog-v",
     "type": "video",
     "src": "videos/outing-2026-11-11-fat-dog.mp4",
