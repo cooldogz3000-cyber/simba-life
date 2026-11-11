@@ -25,6 +25,44 @@
     "alt": "grey toy poodle Simba walking on tiled paving at night beside a wooden bench"
   },
   {
+    "id": "outing-2026-11-11-fat-dog-1",
+    "type": "image",
+    "src": "images/outing-2026-11-11-fat-dog-1.jpg",
+    "date": "2026-11-11",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-11-fat-dog",
+    "alt": "grey toy poodle Simba sitting with an orange ring around the neck, person's beige pants and black sneakers visible",
+    "monthCover": true,
+    "thumb": "images/cal-thumb-2026-11-11.jpg"
+  },
+  {
+    "id": "outing-2026-11-11-fat-dog-2",
+    "type": "image",
+    "src": "images/outing-2026-11-11-fat-dog-2.jpg",
+    "date": "2026-11-11",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-11-fat-dog",
+    "alt": "closer portrait of grey toy poodle Simba with an orange ring around the neck, person's beige pants visible"
+  },
+  {
+    "id": "outing-2026-11-11-fat-dog-3",
+    "type": "image",
+    "src": "images/outing-2026-11-11-fat-dog-3.jpg",
+    "date": "2026-11-11",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-11-fat-dog",
+    "alt": "grey toy poodle Simba sitting in an elevator with an orange ring and yellow-green leash, person in beige pants and dark sweatshirt standing beside holding the leash"
+  },
+  {
     "id": "outing-2026-11-10-autumn-winter-vol1-1",
     "type": "image",
     "src": "images/outing-2026-11-10-autumn-winter-vol1-1.jpg",
