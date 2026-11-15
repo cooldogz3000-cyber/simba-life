@@ -1,5 +1,121 @@
 [
   {
+    "id": "outing-2026-11-15-family-tingkok-v",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "woman in a white dress standing behind a kneeling man in a white shirt, both smiling, grey toy poodle Simba in the foreground on a wooden floor"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v2",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v2.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v2-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "hands holding a black camera, LCD screen showing a woman in a white dress with Simba beside a table"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v3",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v3.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v3-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "woman in a white dress kneeling with a yellow ring toy, man in a white shirt kneeling, grey toy poodle Simba standing on a wooden floor"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v4",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v4.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v4-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "man in a white shirt kneeling and holding grey toy poodle Simba, woman partly visible beside them"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v5",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v5.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v5-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "wider view of a woman and a man on the floor playing with grey toy poodle Simba under window light"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v6",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v6.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v6-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "woman and man on the floor reaching toward grey toy poodle Simba walking on a wooden floor"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v7",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v7.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v7-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "woman standing behind a kneeling man with a yellow ring, grey toy poodle Simba on a sunlit wooden floor"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v8",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v8.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v8-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "grey toy poodle Simba sitting behind a white table with white gerbera daisies in glass bottles"
+  },
+  {
+    "id": "outing-2026-11-15-family-tingkok-v9",
+    "type": "video",
+    "src": "videos/outing-2026-11-15-family-tingkok-v9.mp4",
+    "thumb": "images/outing-2026-11-15-family-tingkok-v9-poster.jpg",
+    "date": "2026-11-15",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-15-family-tingkok",
+    "alt": "grey toy poodle Simba at a flower-set table, a woman with dark hair later entering from the right"
+  },
+  {
     "id": "simba-qq-baby-2026-11-14-1",
     "type": "image",
     "src": "images/simba-qq-baby-2026-11-14-1.jpg",
