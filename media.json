@@ -1,5 +1,74 @@
 [
   {
+    "id": "outing-2026-11-16-gale-poop-dog-1",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-1.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "grey toy poodle Simba running on wet paving at night with a yellow ring in his mouth, palms and a white column behind"
+  },
+  {
+    "id": "outing-2026-11-16-gale-poop-dog-2",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-2.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "grey toy poodle Simba sitting in an elevator looking up with tongue out, yellow ring around his neck, yellow-green leash, person's foot and pant leg visible"
+  },
+  {
+    "id": "outing-2026-11-16-gale-poop-dog-3",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-3.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "grey toy poodle Simba sitting on indoor tiles looking up, yellow ring around his neck, yellow-green leash, person's feet and legs visible"
+  },
+  {
+    "id": "outing-2026-11-16-gale-poop-dog-4",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-4.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "grey toy poodle Simba seen from behind on a leash standing on red tiles beside a granite pillar at night"
+  },
+  {
+    "id": "outing-2026-11-16-gale-poop-dog-5",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-5.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "blurry back of grey toy poodle Simba's head in the foreground, night plaza with palms and a white column"
+  },
+  {
+    "id": "outing-2026-11-16-gale-poop-dog-6",
+    "type": "image",
+    "src": "images/outing-2026-11-16-gale-poop-dog-6.jpg",
+    "date": "2026-11-16",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-16-gale-poop-dog",
+    "alt": "grey toy poodle Simba on a leash looking toward a planter at night, a person in a blue shirt and another dog visible beyond the glass"
+  },
+  {
     "id": "outing-2026-11-16-family-vol1-1",
     "type": "image",
     "src": "images/outing-2026-11-16-family-vol1-1.jpg",
