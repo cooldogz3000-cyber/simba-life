@@ -1,5 +1,16 @@
 [
   {
+    "id": "outing-2026-11-17-waterfront-1",
+    "type": "image",
+    "src": "images/outing-2026-11-17-waterfront-1.jpg",
+    "date": "2026-11-17",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-17-waterfront",
+    "alt": "overhead grey toy poodle Simba on a concrete path beside greenery, yellow-and-black leash, photographer's black sneakers and lower legs and a bit of hand at the bottom"
+  },
+  {
     "id": "outing-2026-11-16-gale-poop-dog-1",
     "type": "image",
     "src": "images/outing-2026-11-16-gale-poop-dog-1.jpg",
