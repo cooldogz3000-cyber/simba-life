@@ -1,5 +1,50 @@
 [
   {
+    "id": "outing-2026-11-20-poop-puppy-1",
+    "type": "image",
+    "src": "images/outing-2026-11-20-poop-puppy-1.jpg",
+    "date": "2026-11-20",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-20-poop-puppy",
+    "alt": "grey toy poodle Simba looking up at the camera on marble tiles, person's beige pants and black sneaker at the left, yellow-black leash at the right"
+  },
+  {
+    "id": "outing-2026-11-20-poop-puppy-2",
+    "type": "image",
+    "src": "images/outing-2026-11-20-poop-puppy-2.jpg",
+    "date": "2026-11-20",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-20-poop-puppy",
+    "alt": "grey toy poodle Simba on a leash sniffing the red brick pavement at night, city lights and a street in the background"
+  },
+  {
+    "id": "outing-2026-11-20-poop-puppy-3",
+    "type": "image",
+    "src": "images/outing-2026-11-20-poop-puppy-3.jpg",
+    "date": "2026-11-20",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-20-poop-puppy",
+    "alt": "close-up of grey toy poodle Simba from behind on red brick paving at night, yellow-black leash, city lights in the background"
+  },
+  {
+    "id": "outing-2026-11-20-poop-puppy-4",
+    "type": "image",
+    "src": "images/outing-2026-11-20-poop-puppy-4.jpg",
+    "date": "2026-11-20",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-20-poop-puppy",
+    "alt": "grey toy poodle Simba seen from behind on a wet concrete path at night, yellow leash attached"
+  },
+  {
     "id": "outing-2026-11-19-wont-poop-dog-1",
     "type": "image",
     "src": "images/outing-2026-11-19-wont-poop-dog-1.jpg",
