@@ -1,5 +1,56 @@
 [
   {
+    "id": "simba-mom-back-2026-11-22-1",
+    "type": "image",
+    "src": "images/simba-mom-back-2026-11-22-1.jpg",
+    "date": "2026-11-22",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-22-mom-back",
+    "alt": "grey toy poodle Simba peeking from behind a wooden cabinet, packs of tissue paper beside him"
+  },
+  {
+    "id": "simba-mom-back-2026-11-22-2",
+    "type": "image",
+    "src": "images/simba-mom-back-2026-11-22-2.jpg",
+    "date": "2026-11-22",
+    "tags": [
+      "日常",
+      "日記",
+      "家人"
+    ],
+    "entryId": "day-2026-11-22-mom-back",
+    "alt": "grey toy poodle Simba lying on his back on pillows, a person's hand petting his belly, blue puffer sleeve"
+  },
+  {
+    "id": "simba-mom-back-2026-11-22-3",
+    "type": "image",
+    "src": "images/simba-mom-back-2026-11-22-3.jpg",
+    "date": "2026-11-22",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-22-mom-back",
+    "alt": "close-up of grey toy poodle Simba's face on a pillow"
+  },
+  {
+    "id": "simba-mom-back-2026-11-22-v",
+    "type": "video",
+    "src": "videos/simba-mom-back-2026-11-22.mp4",
+    "thumb": "images/simba-mom-back-2026-11-22-poster.jpg",
+    "date": "2026-11-22",
+    "tags": [
+      "日常",
+      "日記",
+      "家人"
+    ],
+    "entryId": "day-2026-11-22-mom-back",
+    "alt": "grey toy poodle Simba lying on his back on pillows, a person's hand petting him"
+  },
+  {
     "id": "simba-missing-mommy-simba-2026-11-22-1",
     "type": "image",
     "src": "images/simba-missing-mommy-simba-2026-11-22-1.jpg",
