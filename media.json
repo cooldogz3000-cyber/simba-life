@@ -1,5 +1,18 @@
 [
   {
+    "id": "simba-morning-play-2026-11-23-v",
+    "type": "video",
+    "src": "videos/simba-morning-play-2026-11-23.mp4",
+    "thumb": "images/simba-morning-play-2026-11-23-poster.jpg",
+    "date": "2026-11-23",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-11-23-morning-play",
+    "alt": "grey toy poodle Simba standing on grey tiles looking at the camera, yellow ring toy on the floor in front, wooden shoe rack with white sneakers and a white door in the background"
+  },
+  {
     "id": "simba-mom-back-2026-11-22-1",
     "type": "image",
     "src": "images/simba-mom-back-2026-11-22-1.jpg",
