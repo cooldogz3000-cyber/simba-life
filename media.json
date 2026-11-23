@@ -2052,6 +2052,319 @@
     "alt": "grey toy poodle smiling up on paved walkway, orange ring at edge"
   },
   {
+    "id": "outing-2026-08-08-secret-little-world-1",
+    "type": "image",
+    "src": "images/outing-2026-08-08-secret-little-world-1.jpg",
+    "date": "2026-08-08",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-08-08-secret-little-world",
+    "alt": "grey toy poodle Simba sitting on a pale-blue outdoor tiled path among plants, yellow leash visible"
+  },
+  {
+    "id": "outing-2026-07-03-flying-ears-1",
+    "type": "image",
+    "src": "images/outing-2026-07-03-flying-ears-1.jpg",
+    "date": "2026-07-03",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-07-03-flying-ears",
+    "alt": "restaurant table with tom yum soup and pineapple fried rice, grey toy poodle Simba behind the dishes, person in blue shirt at right"
+  },
+  {
+    "id": "outing-2026-05-22-ten-years-1",
+    "type": "image",
+    "src": "images/outing-2026-05-22-ten-years-1.jpg",
+    "date": "2026-05-22",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-22-ten-years",
+    "alt": "grey toy poodle Simba at a lakeside restaurant table with nachos, drinks and bread"
+  },
+  {
+    "id": "outing-2026-05-06-fourth-birthday-1",
+    "type": "image",
+    "src": "images/outing-2026-05-06-fourth-birthday-1.jpg",
+    "date": "2026-05-06",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-05-06-fourth-birthday",
+    "alt": "grey toy poodle Simba outdoors in a birthday bib at WM Hotel"
+  },
+  {
+    "id": "outing-2026-05-06-fourth-birthday-2",
+    "type": "image",
+    "src": "images/outing-2026-05-06-fourth-birthday-2.jpg",
+    "date": "2026-05-06",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-05-06-fourth-birthday",
+    "alt": "grey toy poodle Simba sitting outdoors in a birthday bib beside a white Happy Birthday heart balloon"
+  },
+  {
+    "id": "outing-2026-05-06-fourth-birthday-3",
+    "type": "image",
+    "src": "images/outing-2026-05-06-fourth-birthday-3.jpg",
+    "date": "2026-05-06",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-06-fourth-birthday",
+    "alt": "grey toy poodle Simba on a cafe chair in a birthday bib, paw-shaped cake with a lit number 4 candle on the table"
+  },
+  {
+    "id": "outing-2026-05-06-fourth-birthday-4",
+    "type": "image",
+    "src": "images/outing-2026-05-06-fourth-birthday-4.jpg",
+    "date": "2026-05-06",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-06-fourth-birthday",
+    "alt": "restaurant plates of fries, fried rolls, salmon and steak, grey toy poodle Simba sitting at the outdoor table"
+  },
+  {
+    "id": "outing-2026-05-03-rainy-sushi-1",
+    "type": "image",
+    "src": "images/outing-2026-05-03-rainy-sushi-1.jpg",
+    "date": "2026-05-03",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-05-03-rainy-sushi",
+    "alt": "sushi and sashimi spread on a wooden board, grey toy poodle Simba behind the food, person in a jacket at right"
+  },
+  {
+    "id": "outing-2026-05-03-rainy-sushi-2",
+    "type": "image",
+    "src": "images/outing-2026-05-03-rainy-sushi-2.jpg",
+    "date": "2026-05-03",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-03-rainy-sushi",
+    "alt": "close-up of sushi platter and salmon ikura rice bowl"
+  },
+  {
+    "id": "outing-2026-05-03-rainy-sushi-3",
+    "type": "image",
+    "src": "images/outing-2026-05-03-rainy-sushi-3.jpg",
+    "date": "2026-05-03",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-03-rainy-sushi",
+    "alt": "hand holding a box of layered green-and-white coconut kuih at Thai Chun stall"
+  },
+  {
+    "id": "outing-2026-05-03-rainy-sushi-4",
+    "type": "image",
+    "src": "images/outing-2026-05-03-rainy-sushi-4.jpg",
+    "date": "2026-05-03",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-05-03-rainy-sushi",
+    "alt": "hand holding a 宏德發 takeaway cup in front of the shop signs"
+  },
+  {
+    "id": "simba-ai-fun-2026-05-02-1",
+    "type": "image",
+    "src": "images/simba-ai-fun-2026-05-02-1.jpg",
+    "date": "2026-05-02",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-05-02-ai-fun",
+    "alt": "AI illustration of a woman holding a grey poodle, watermark 豆包AI生成"
+  },
+  {
+    "id": "simba-ai-fun-2026-05-02-2",
+    "type": "image",
+    "src": "images/simba-ai-fun-2026-05-02-2.jpg",
+    "date": "2026-05-02",
+    "tags": [
+      "日常",
+      "日記",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "day-2026-05-02-ai-fun",
+    "alt": "woman holding grey toy poodle Simba at a restaurant table with pasta and drinks"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-1",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-1.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "indoor grey toy poodle Simba with a lime-green ring toy"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-2",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-2.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "indoor portrait of grey toy poodle Simba sitting by a wooden door, bone-shaped tag"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-3",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-3.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba sitting on a beige sofa"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-4",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-4.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba standing with a lime-green ring toy around the neck"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-5",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-5.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "close-up of grey toy poodle Simba with a lime-green ring toy around the neck"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-6",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-6.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "close-up of grey toy poodle Simba's face, tongue out"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-7",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-7.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba looking up, tongue out, on wood-look floor"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-8",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-8.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba seen through a lime-green ring toy"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-9",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-9.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba holding an orange dinosaur plush in its mouth"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-10",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-10.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "close-up of grey toy poodle Simba holding an orange dinosaur plush"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-11",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-11.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba standing on a puppy pad, orange dinosaur toy on the floor"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-12",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-12.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba standing on a puppy pad, orange dinosaur toy behind"
+  },
+  {
+    "id": "simba-three-year-old-2026-04-30-13",
+    "type": "image",
+    "src": "images/simba-three-year-old-2026-04-30-13.jpg",
+    "date": "2026-04-30",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-30-three-year-old",
+    "alt": "grey toy poodle Simba standing on wood-look floor, orange dinosaur toy in front"
+  },
+  {
     "id": "childhood-2023-08-neuter",
     "type": "video",
     "src": "videos/childhood-2023-08-neuter.mp4",
