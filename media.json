@@ -2365,6 +2365,162 @@
     "alt": "grey toy poodle Simba standing on wood-look floor, orange dinosaur toy in front"
   },
   {
+    "id": "simba-simba-intro-2026-04-29",
+    "type": "image",
+    "src": "images/simba-simba-intro-2026-04-29.jpg",
+    "date": "2026-04-29",
+    "tags": [
+      "日常",
+      "日記"
+    ],
+    "entryId": "day-2026-04-29-simba-intro",
+    "alt": "chalkboard-style graphic titled 辛巴的介紹, with a photo of grey toy poodle Simba and close-up details"
+  },
+  {
+    "id": "outing-2026-04-05-the-pantry-1",
+    "type": "image",
+    "src": "images/outing-2026-04-05-the-pantry-1.jpg",
+    "date": "2026-04-05",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-04-05-the-pantry",
+    "alt": "woman holding grey toy poodle Simba at a restaurant table with a Happy Birthday pancake and other dishes"
+  },
+  {
+    "id": "outing-2026-04-05-the-pantry-2",
+    "type": "image",
+    "src": "images/outing-2026-04-05-the-pantry-2.jpg",
+    "date": "2026-04-05",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-04-05-the-pantry",
+    "alt": "woman holding grey toy poodle Simba at a restaurant table with mussels, orange juice and matcha latte"
+  },
+  {
+    "id": "outing-2026-04-05-the-pantry-3",
+    "type": "image",
+    "src": "images/outing-2026-04-05-the-pantry-3.jpg",
+    "date": "2026-04-05",
+    "tags": [
+      "外出",
+      "餐廳"
+    ],
+    "entryId": "outing-2026-04-05-the-pantry",
+    "alt": "restaurant table with mussels, orange juice and matcha latte, grey toy poodle Simba peeking from behind the table"
+  },
+  {
+    "id": "outing-2026-04-05-the-pantry-4",
+    "type": "image",
+    "src": "images/outing-2026-04-05-the-pantry-4.jpg",
+    "date": "2026-04-05",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-04-05-the-pantry",
+    "alt": "two women at a restaurant table, one holding grey toy poodle Simba, mussels and drinks on the table"
+  },
+  {
+    "id": "outing-2026-04-05-simplylife-1",
+    "type": "image",
+    "src": "images/outing-2026-04-05-simplylife-1.jpg",
+    "date": "2026-04-05",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-04-05-simplylife",
+    "alt": "woman holding grey toy poodle Simba at a table with fish and chips, pasta and drinks"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-1",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-1.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red Chinese New Year bib sitting on a booth seat with red packets on the table"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-2",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-2.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red floral New Year vest on a tiled floor, tongue out"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-3",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-3.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red floral New Year vest on a tiled floor"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-4",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-4.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red New Year jacket with people in festive vests and a large Calbee snack bag"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-5",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-5.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red New Year jacket, people in festive clothes and a Calbee bag beside him"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-6",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-6.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "grey toy poodle Simba in a red New Year jacket beside a large Calbee bag and two red packets"
+  },
+  {
+    "id": "outing-2026-02-23-yan-yat-7",
+    "type": "image",
+    "src": "images/outing-2026-02-23-yan-yat-7.jpg",
+    "date": "2026-02-23",
+    "tags": [
+      "外出",
+      "家人"
+    ],
+    "entryId": "outing-2026-02-23-yan-yat",
+    "alt": "woman sitting on the floor holding grey toy poodle Simba and a red packet, large Calbee bag beside them"
+  },
+  {
     "id": "childhood-2023-08-neuter",
     "type": "video",
     "src": "videos/childhood-2023-08-neuter.mp4",
