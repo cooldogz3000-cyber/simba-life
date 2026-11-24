@@ -1,5 +1,81 @@
 [
   {
+    "id": "outing-2026-11-24-grandma-happy-1",
+    "type": "image",
+    "src": "images/outing-2026-11-24-grandma-happy-1.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "grey toy poodle Simba standing on tiled floor in a light blue fleece vest, wooden cabinet behind, mouth slightly open"
+  },
+  {
+    "id": "outing-2026-11-24-grandma-happy-2",
+    "type": "image",
+    "src": "images/outing-2026-11-24-grandma-happy-2.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "grey toy poodle Simba standing on tiled floor in a light blue fleece vest, looking up, a person's lower leg and purple shoe at the bottom-right edge"
+  },
+  {
+    "id": "outing-2026-11-24-grandma-happy-3",
+    "type": "video",
+    "src": "videos/outing-2026-11-24-grandma-happy-3.mp4",
+    "thumb": "images/outing-2026-11-24-grandma-happy-3-poster.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "elderly woman sitting and eating from a bowl at a folding table with dishes of food, grey toy poodle Simba in a light blue fleece vest standing by a white bowl on the floor"
+  },
+  {
+    "id": "outing-2026-11-24-grandma-happy-4",
+    "type": "image",
+    "src": "images/outing-2026-11-24-grandma-happy-4.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "elderly woman with white hair sitting and holding grey toy poodle Simba in a light blue fleece vest, leftover food on a napkin and drinks on the table"
+  },
+  {
+    "id": "outing-2026-11-24-grandma-happy-5",
+    "type": "image",
+    "src": "images/outing-2026-11-24-grandma-happy-5.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "elderly woman with white hair sitting and holding grey toy poodle Simba in a light blue fleece vest, leftover food and drinks on the table"
+  },
+  {
+    "id": "outing-2026-11-24-grandma-happy-6",
+    "type": "video",
+    "src": "videos/outing-2026-11-24-grandma-happy-6.mp4",
+    "thumb": "images/outing-2026-11-24-grandma-happy-6-poster.jpg",
+    "date": "2026-11-24",
+    "tags": [
+      "外出",
+      "餐廳",
+      "家人"
+    ],
+    "entryId": "outing-2026-11-24-grandma-happy",
+    "alt": "elderly woman and a woman in a white sweatshirt sitting at a folding table with leftover food and drinks, grey toy poodle Simba in a light blue fleece vest beside them"
+  },
+  {
     "id": "outing-2026-11-24-carry-ring-1",
     "type": "image",
     "src": "images/outing-2026-11-24-carry-ring-1.jpg",
