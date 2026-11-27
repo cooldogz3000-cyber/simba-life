@@ -1,5 +1,71 @@
 [
   {
+    "id": "outing-2026-11-27-moonlight-wont-poop-1",
+    "type": "image",
+    "src": "images/outing-2026-11-27-moonlight-wont-poop-1.jpg",
+    "date": "2026-11-27",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-27-moonlight-wont-poop",
+    "alt": "grey toy poodle Simba on a yellow leash walking away on a night sidewalk, a bright moon in the cloudy sky above a lit building and trees"
+  },
+  {
+    "id": "outing-2026-11-27-moonlight-wont-poop-2",
+    "type": "image",
+    "src": "images/outing-2026-11-27-moonlight-wont-poop-2.jpg",
+    "date": "2026-11-27",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-27-moonlight-wont-poop",
+    "alt": "grey toy poodle Simba sitting in a marble-walled elevator, mouth open and tongue out, a yellow leash around the neck"
+  },
+  {
+    "id": "outing-2026-11-27-moonlight-wont-poop-3",
+    "type": "image",
+    "src": "images/outing-2026-11-27-moonlight-wont-poop-3.jpg",
+    "date": "2026-11-27",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-27-moonlight-wont-poop",
+    "alt": "close-up of grey toy poodle Simba indoors on a pale floor mat, mouth slightly open showing teeth, a bone-shaped Simba tag on a red collar, an orange bag at the right"
+  },
+  {
+    "id": "outing-2026-11-27-moonlight-wont-poop-4",
+    "type": "image",
+    "src": "images/outing-2026-11-27-moonlight-wont-poop-4.jpg",
+    "date": "2026-11-27",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-27-moonlight-wont-poop",
+    "alt": "close-up of grey toy poodle Simba indoors on a pale floor mat, tongue out, a bone-shaped Simba tag on a red collar, an orange bag at the right"
+  },
+  {
+    "id": "outing-2026-11-26-barking-dog-1",
+    "type": "image",
+    "src": "images/outing-2026-11-26-barking-dog-1.jpg",
+    "date": "2026-11-26",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-26-barking-dog",
+    "alt": "close-up of grey toy poodle Simba looking up from textured concrete, a yellow leash at the right, a shadow to the left"
+  },
+  {
+    "id": "outing-2026-11-26-barking-dog-2",
+    "type": "image",
+    "src": "images/outing-2026-11-26-barking-dog-2.jpg",
+    "date": "2026-11-26",
+    "tags": [
+      "外出"
+    ],
+    "entryId": "outing-2026-11-26-barking-dog",
+    "alt": "grey toy poodle Simba sitting on textured concrete looking up, a yellow leash extending toward the bottom, a shadow to the left"
+  },
+  {
     "id": "outing-2026-11-25-wont-be-cold-1",
     "type": "image",
     "src": "images/outing-2026-11-25-wont-be-cold-1.jpg",
